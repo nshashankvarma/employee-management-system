@@ -1,5 +1,6 @@
 package com.hyperface.ems.service;
 
+import com.hyperface.ems.exception.ApplicationException;
 import com.hyperface.ems.model.Department;
 import com.hyperface.ems.model.Employee;
 import com.hyperface.ems.model.Project;
@@ -27,7 +28,7 @@ public class DepartmentService {
         if(department.isPresent()){
             return department.get().getProjects();
         }
-        return null;
+        throw new ApplicationException(404, "Department not found!");
     }
 
     public List<Employee> getEmployeesUnderDept(int deptId){
@@ -35,7 +36,7 @@ public class DepartmentService {
         if(department.isPresent()){
             return department.get().getEmployees();
         }
-        return null;
+        throw new ApplicationException(404, "Department not found!");
     }
 
     public String deleteDepartment(int deptId){
@@ -44,6 +45,6 @@ public class DepartmentService {
             departmentRepo.deleteById(deptId);
             return "Deleted " + department.get().getName() + " Successfully";
         }
-        return "Department Not Found";
+        throw new ApplicationException(404, "Department not found!");
     }
 }

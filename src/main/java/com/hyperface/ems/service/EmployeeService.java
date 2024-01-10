@@ -1,5 +1,6 @@
 package com.hyperface.ems.service;
 
+import com.hyperface.ems.exception.ApplicationException;
 import com.hyperface.ems.model.Department;
 import com.hyperface.ems.model.Employee;
 import com.hyperface.ems.model.Project;
@@ -39,6 +40,9 @@ public class EmployeeService {
             employee1.setDepartment(department.get());
             employeeRepo.save(employee1);
         }
+        else{
+            throw new ApplicationException(404, "Invalid Parameters!");
+        }
     }
 
     public void assignProjectToEmployee(int empId, int projId){
@@ -51,6 +55,9 @@ public class EmployeeService {
                 employee1.setProject(project1);
                 employeeRepo.save(employee1);
             }
+            else{
+                throw new ApplicationException(404, "Invalid Parameters!");
+            }
 
         }
     }
@@ -61,6 +68,6 @@ public class EmployeeService {
             employeeRepo.deleteById(empId);
             return "Deleted " + employee.get().getFirstName() + " Successfully";
         }
-        return "Employee Not Found";
+        throw new ApplicationException(404, "Employee not found!");
     }
 }

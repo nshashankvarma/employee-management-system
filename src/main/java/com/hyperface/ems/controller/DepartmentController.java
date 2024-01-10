@@ -5,6 +5,7 @@ import com.hyperface.ems.model.Department;
 import com.hyperface.ems.model.Employee;
 import com.hyperface.ems.model.Project;
 import com.hyperface.ems.service.DepartmentService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,7 +21,7 @@ public class DepartmentController {
     }
 
     @PostMapping("/create")
-    public String createDepartment(@RequestBody Department department){
+    public String createDepartment(@Valid @RequestBody Department department){
         departmentService.createDept(department);
         return "Created new Department";
     }
