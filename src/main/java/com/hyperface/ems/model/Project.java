@@ -1,6 +1,8 @@
 package com.hyperface.ems.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.transaction.Transactional;
 
@@ -20,7 +22,7 @@ public class Project {
 
     private String projectDesc;
 
-    @JsonIgnore
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "departmentId")
     private Department department;

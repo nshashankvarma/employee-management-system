@@ -37,4 +37,13 @@ public class DepartmentService {
         }
         return null;
     }
+
+    public String deleteDepartment(int deptId){
+        Optional<Department> department = departmentRepo.findById(deptId);
+        if(department.isPresent()){
+            departmentRepo.deleteById(deptId);
+            return "Deleted " + department.get().getName() + " Successfully";
+        }
+        return "Department Not Found";
+    }
 }

@@ -34,4 +34,9 @@ public class DepartmentController {
     public List<Employee> getEmployeesUnderDept(@PathVariable("departmentId") int deptId){
         return departmentService.getEmployeesUnderDept(deptId);
     }
+
+    @DeleteMapping("/delete/{departmentId}")
+    public String deleteDept(@PathVariable("departmentId") int deptId){
+        return departmentService.deleteDepartment(deptId);
+    }
 }

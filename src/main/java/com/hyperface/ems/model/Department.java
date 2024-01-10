@@ -1,6 +1,7 @@
 package com.hyperface.ems.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.transaction.Transactional;
 
@@ -17,9 +18,10 @@ public class Department {
 
     private String name;
 
+//    @JsonManagedReference
     @OneToMany(mappedBy = "department", cascade = CascadeType.ALL)
     private List<Project> projects;
-
+//    @JsonManagedReference
     @OneToMany(mappedBy = "department", cascade = CascadeType.ALL)
     private List<Employee> employees;
 
