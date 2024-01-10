@@ -2,6 +2,7 @@ package com.hyperface.ems.controller;
 
 import com.hyperface.ems.model.Employee;
 import com.hyperface.ems.service.EmployeeService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -16,7 +17,7 @@ public class EmployeeController {
     }
 
     @PostMapping("/create")
-    public String createEmployee(@RequestBody Employee employee){
+    public String createEmployee(@Valid @RequestBody Employee employee){
         employeeService.createEmployee(employee);
         return "Employee Created Successfully";
     }

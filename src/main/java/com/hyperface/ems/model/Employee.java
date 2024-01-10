@@ -3,6 +3,7 @@ package com.hyperface.ems.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.transaction.Transactional;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Table
@@ -13,8 +14,10 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
+    @NotNull(message = "First name is mandatory!")
     private String firstName;
     private String lastName;
+    @NotNull(message = "Email is mandatory!")
     private String email;
 
     @JsonIgnore

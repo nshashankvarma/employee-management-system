@@ -1,5 +1,6 @@
 package com.hyperface.ems.service;
 
+import com.hyperface.ems.exception.ApplicationException;
 import com.hyperface.ems.model.Department;
 import com.hyperface.ems.model.Project;
 import com.hyperface.ems.repository.ProjectRepo;
@@ -33,6 +34,6 @@ public class ProjectService {
             projectRepo.deleteById(projId);
             return "Deleted " + project.get().getProjectName() + " Successfully";
         }
-        return "Department Not Found";
+        throw new ApplicationException(404, "Project not found!");
     }
 }

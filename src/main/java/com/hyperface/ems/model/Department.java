@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.transaction.Transactional;
+import jakarta.validation.constraints.NotNull;
 
 import java.util.List;
 
@@ -16,6 +17,7 @@ public class Department {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
+    @NotNull(message = "Name is mandatory!")
     private String name;
 
 //    @JsonManagedReference
