@@ -24,7 +24,7 @@ public class Department {
     @OneToMany(mappedBy = "department", cascade = CascadeType.ALL)
     private List<Project> projects;
 //    @JsonManagedReference
-    @OneToMany(mappedBy = "department", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "department")
     private List<Employee> employees;
 
     public int getId() {

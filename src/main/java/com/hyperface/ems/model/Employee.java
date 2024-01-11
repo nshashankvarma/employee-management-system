@@ -3,6 +3,7 @@ package com.hyperface.ems.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.transaction.Transactional;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
 
 @Entity
@@ -18,15 +19,16 @@ public class Employee {
     private String firstName;
     private String lastName;
     @NotNull(message = "Email is mandatory!")
+    @Email
     private String email;
 
     @JsonIgnore
     @ManyToOne
-    @JoinColumn(name = "departmentId")
+    @JoinColumn(name = "departmentId",  nullable = true)
     private Department department;
     @JsonIgnore
     @ManyToOne
-    @JoinColumn(name = "projectId")
+    @JoinColumn(name = "projectId", nullable = true)
     private Project project;
 
     public int getId() {

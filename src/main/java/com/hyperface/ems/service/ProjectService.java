@@ -2,10 +2,12 @@ package com.hyperface.ems.service;
 
 import com.hyperface.ems.exception.ApplicationException;
 import com.hyperface.ems.model.Department;
+import com.hyperface.ems.model.Employee;
 import com.hyperface.ems.model.Project;
 import com.hyperface.ems.repository.ProjectRepo;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -34,6 +36,10 @@ public class ProjectService {
             projectRepo.deleteById(projId);
             return "Deleted " + project.get().getProjectName() + " Successfully";
         }
-        throw new ApplicationException(404, "Project not found!");
+        throw new ApplicationException(404, "Project not found!","");
+    }
+
+    public List<Employee> getEmployeesUnderProject(int projId){
+        return projectRepo.findById(projId).get().getEmployees();
     }
 }

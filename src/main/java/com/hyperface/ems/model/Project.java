@@ -8,6 +8,7 @@ import jakarta.transaction.Transactional;
 import jakarta.validation.constraints.NotNull;
 
 import javax.swing.text.html.Option;
+import java.util.List;
 import java.util.Optional;
 
 @Entity
@@ -25,8 +26,11 @@ public class Project {
 
     @JsonBackReference
     @ManyToOne
-    @JoinColumn(name = "departmentId")
+    @JoinColumn(name = "departmentId", nullable = true)
     private Department department;
+
+    @OneToMany(mappedBy = "project")
+    private List<Employee> employees;
 
     public int getId() {
         return id;
@@ -58,5 +62,13 @@ public class Project {
 
     public void setDepartment(Department department) {
         this.department = department;
+    }
+
+    public List<Employee> getEmployees() {
+        return employees;
+    }
+
+    public void setEmployees(List<Employee> employees) {
+        this.employees = employees;
     }
 }

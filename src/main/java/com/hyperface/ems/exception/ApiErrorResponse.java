@@ -9,10 +9,13 @@ class ApiErrorResponse {
     HttpStatus httpStatus;
     String message;
 
-    ApiErrorResponse(LocalDateTime timestamp, HttpStatus httpStatus, String message) {
+    String desc;
+
+    ApiErrorResponse(LocalDateTime timestamp, HttpStatus httpStatus, String message, String desc) {
         this.timestamp = timestamp;
         this.httpStatus = httpStatus;
         this.message = message;
+        this.desc = desc;
     }
 
     ApiErrorResponse(){}
@@ -39,5 +42,13 @@ class ApiErrorResponse {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
     }
 }

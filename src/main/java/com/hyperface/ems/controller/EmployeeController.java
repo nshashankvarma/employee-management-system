@@ -1,5 +1,6 @@
 package com.hyperface.ems.controller;
 
+import com.fasterxml.jackson.core.PrettyPrinter;
 import com.hyperface.ems.model.Employee;
 import com.hyperface.ems.service.EmployeeService;
 import jakarta.validation.Valid;
@@ -14,6 +15,11 @@ public class EmployeeController {
     public EmployeeController(EmployeeService employeeService) {
         super();
         this.employeeService = employeeService;
+    }
+
+    @GetMapping("{empId}")
+    public Employee getEmployeeDetails(@PathVariable int empId){
+        return employeeService.getEmployeeDetails(empId);
     }
 
     @PostMapping("/create")
