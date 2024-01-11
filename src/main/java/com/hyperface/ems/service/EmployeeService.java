@@ -28,6 +28,13 @@ public class EmployeeService {
         this.employeeRepo = employeeRepo;
     }
 
+    public Employee getEmployeeDetails(int empId){
+        Optional<Employee> employee = employeeRepo.findById(empId);
+        if(employee.isPresent()){
+            return employee.get();
+        }
+        throw new ApplicationException(404, "Employee Not Found", "");
+    }
     public void createEmployee(Employee employee){
         employeeRepo.save(employee);
     }
@@ -41,7 +48,7 @@ public class EmployeeService {
             employeeRepo.save(employee1);
         }
         else{
-            throw new ApplicationException(404, "Invalid Parameters!");
+            throw new ApplicationException(404, "Invalid Parameters!", "Wrong Employee Id or Dept Id given!");
         }
     }
 
@@ -56,7 +63,7 @@ public class EmployeeService {
                 employeeRepo.save(employee1);
             }
             else{
-                throw new ApplicationException(404, "Invalid Parameters!");
+                throw new ApplicationException(404, "Invalid Parameters!","Wrong Project Id or Dept Id given!");
             }
 
         }
@@ -68,6 +75,6 @@ public class EmployeeService {
             employeeRepo.deleteById(empId);
             return "Deleted " + employee.get().getFirstName() + " Successfully";
         }
-        throw new ApplicationException(404, "Employee not found!");
+        throw new ApplicationException(404, "Employee not found!","");
     }
 }
