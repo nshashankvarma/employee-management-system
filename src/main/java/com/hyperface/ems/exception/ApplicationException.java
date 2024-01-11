@@ -2,7 +2,6 @@ package com.hyperface.ems.exception;
 
 public class ApplicationException extends RuntimeException {
     private String errorMessage;
-
     private String errorDesc;
     private int internalErrorCode;
 
