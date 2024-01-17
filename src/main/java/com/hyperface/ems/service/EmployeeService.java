@@ -10,6 +10,7 @@ import com.hyperface.ems.repository.ProjectRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.OptionalInt;
 
@@ -28,6 +29,9 @@ public class EmployeeService {
         this.employeeRepo = employeeRepo;
     }
 
+    public List<Employee> getAllEmployees(){
+        return employeeRepo.findAll();
+    }
     public Employee getEmployeeDetails(int empId){
         Optional<Employee> employee = employeeRepo.findById(empId);
         if(employee.isPresent()){
@@ -35,8 +39,8 @@ public class EmployeeService {
         }
         throw new ApplicationException(404, "Employee Not Found", "");
     }
-    public void createEmployee(Employee employee){
-        employeeRepo.save(employee);
+    public Employee createEmployee(Employee employee){
+        return employeeRepo.save(employee);
     }
 
     public void assignDepartmentToEmployee(int empId, int deptId){

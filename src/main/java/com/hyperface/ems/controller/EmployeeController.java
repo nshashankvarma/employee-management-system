@@ -6,6 +6,8 @@ import com.hyperface.ems.service.EmployeeService;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/employee")
 public class EmployeeController {
@@ -15,6 +17,11 @@ public class EmployeeController {
     public EmployeeController(EmployeeService employeeService) {
         super();
         this.employeeService = employeeService;
+    }
+
+    @GetMapping("/getAll")
+    public List<Employee> getAllEmployees(){
+        return employeeService.getAllEmployees();
     }
 
     @GetMapping("{empId}")
