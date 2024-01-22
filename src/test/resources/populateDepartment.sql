@@ -1,0 +1,2 @@
+INSERT INTO Department VALUES("Tech");
+INSERT INTO Project VALUES("CMS" , 1);

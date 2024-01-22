@@ -20,7 +20,15 @@ public class Department {
     @NotNull(message = "Name is mandatory!")
     private String name;
 
-//    @JsonManagedReference
+    public Department() {
+    }
+
+    public Department(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    //    @JsonManagedReference
     @OneToMany(mappedBy = "department", cascade = CascadeType.ALL)
     private List<Project> projects;
 //    @JsonManagedReference

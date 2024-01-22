@@ -33,7 +33,6 @@ class GlobalExceptionHandler{
         return new ApiErrorResponse(LocalDateTime.now(), HttpStatus.BAD_REQUEST, "Invalid Parameters!", errors.toString());
     }
 
-
     @ExceptionHandler(value = Exception.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public ApiErrorResponse fallBack(Exception ex){

@@ -10,6 +10,7 @@ import com.hyperface.ems.repository.ProjectRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.OptionalInt;
 
@@ -17,17 +18,20 @@ import java.util.OptionalInt;
 public class EmployeeService {
     private EmployeeRepo employeeRepo;
 
-    @Autowired
     private DepartmentRepo departmentRepo;
 
-    @Autowired
     private ProjectRepo projectRepo;
 
-    public EmployeeService(EmployeeRepo employeeRepo) {
+    public EmployeeService(EmployeeRepo employeeRepo, DepartmentRepo departmentRepo, ProjectRepo projectRepo) {
         super();
         this.employeeRepo = employeeRepo;
+        this.departmentRepo = departmentRepo;
+        this.projectRepo = projectRepo;
     }
 
+    public List<Employee> getAllEmployees(){
+        return employeeRepo.findAll();
+    }
     public Employee getEmployeeDetails(int empId){
         Optional<Employee> employee = employeeRepo.findById(empId);
         if(employee.isPresent()){
@@ -35,8 +39,8 @@ public class EmployeeService {
         }
         throw new ApplicationException(404, "Employee Not Found", "");
     }
-    public void createEmployee(Employee employee){
-        employeeRepo.save(employee);
+    public Employee createEmployee(Employee employee){
+        return employeeRepo.save(employee);
     }
 
     public void assignDepartmentToEmployee(int empId, int deptId){
@@ -63,9 +67,11 @@ public class EmployeeService {
                 employeeRepo.save(employee1);
             }
             else{
-                throw new ApplicationException(404, "Invalid Parameters!","Wrong Project Id or Dept Id given!");
+                throw new ApplicationException(404, "Invalid Parameters!","Project doesn't belong to his Department!");
             }
-
+        }
+        else{
+            throw new ApplicationException(404, "Invalid Parameters!","Wrong Project Id or Dept Id given!");
         }
     }
 

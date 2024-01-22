@@ -8,7 +8,6 @@ class ApiErrorResponse {
     LocalDateTime timestamp;
     HttpStatus httpStatus;
     String message;
-
     String desc;
 
     ApiErrorResponse(LocalDateTime timestamp, HttpStatus httpStatus, String message, String desc) {

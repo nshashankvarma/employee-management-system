@@ -32,6 +32,15 @@ public class Project {
     @OneToMany(mappedBy = "project")
     private List<Employee> employees;
 
+    public Project() {
+    }
+
+    public Project(int id, String projectName, String projectDesc) {
+        this.id = id;
+        this.projectName = projectName;
+        this.projectDesc = projectDesc;
+    }
+
     public int getId() {
         return id;
     }

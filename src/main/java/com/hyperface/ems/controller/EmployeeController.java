@@ -4,7 +4,10 @@ import com.fasterxml.jackson.core.PrettyPrinter;
 import com.hyperface.ems.model.Employee;
 import com.hyperface.ems.service.EmployeeService;
 import jakarta.validation.Valid;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/employee")
@@ -17,12 +20,18 @@ public class EmployeeController {
         this.employeeService = employeeService;
     }
 
+    @GetMapping("/getAll")
+    public List<Employee> getAllEmployees(){
+        return employeeService.getAllEmployees();
+    }
+
     @GetMapping("{empId}")
     public Employee getEmployeeDetails(@PathVariable int empId){
         return employeeService.getEmployeeDetails(empId);
     }
 
     @PostMapping("/create")
+    @ResponseStatus(HttpStatus.CREATED)
     public String createEmployee(@Valid @RequestBody Employee employee){
         employeeService.createEmployee(employee);
         return "Employee Created Successfully";
