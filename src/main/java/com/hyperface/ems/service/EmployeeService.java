@@ -18,15 +18,15 @@ import java.util.OptionalInt;
 public class EmployeeService {
     private EmployeeRepo employeeRepo;
 
-    @Autowired
     private DepartmentRepo departmentRepo;
 
-    @Autowired
     private ProjectRepo projectRepo;
 
-    public EmployeeService(EmployeeRepo employeeRepo) {
+    public EmployeeService(EmployeeRepo employeeRepo, DepartmentRepo departmentRepo, ProjectRepo projectRepo) {
         super();
         this.employeeRepo = employeeRepo;
+        this.departmentRepo = departmentRepo;
+        this.projectRepo = projectRepo;
     }
 
     public List<Employee> getAllEmployees(){
@@ -67,9 +67,11 @@ public class EmployeeService {
                 employeeRepo.save(employee1);
             }
             else{
-                throw new ApplicationException(404, "Invalid Parameters!","Wrong Project Id or Dept Id given!");
+                throw new ApplicationException(404, "Invalid Parameters!","Project doesn't belong to his Department!");
             }
-
+        }
+        else{
+            throw new ApplicationException(404, "Invalid Parameters!","Wrong Project Id or Dept Id given!");
         }
     }
 

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.PrettyPrinter;
 import com.hyperface.ems.model.Employee;
 import com.hyperface.ems.service.EmployeeService;
 import jakarta.validation.Valid;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -30,6 +31,7 @@ public class EmployeeController {
     }
 
     @PostMapping("/create")
+    @ResponseStatus(HttpStatus.CREATED)
     public String createEmployee(@Valid @RequestBody Employee employee){
         employeeService.createEmployee(employee);
         return "Employee Created Successfully";
