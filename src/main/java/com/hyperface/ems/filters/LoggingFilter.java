@@ -1,4 +1,4 @@
-package com.hyperface.ems.exception;
+package com.hyperface.ems.filters;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -22,12 +22,8 @@ public class LoggingFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
             throws ServletException, IOException {
-        // Log incoming requests
         logger.info("Request received - Method: {}, URI: {}", request.getMethod(), request.getRequestURI());
-        System.out.println("Logged!!!!!!!!!");
         filterChain.doFilter(request, response);
-
-        // Log response status
         logger.info("Response status: {}", response.getStatus());
     }
 }
