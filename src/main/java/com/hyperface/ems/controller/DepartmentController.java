@@ -6,6 +6,7 @@ import com.hyperface.ems.model.Employee;
 import com.hyperface.ems.model.Project;
 import com.hyperface.ems.service.DepartmentService;
 import jakarta.validation.Valid;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,6 +22,7 @@ public class DepartmentController {
     }
 
     @PostMapping("/create")
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public String createDepartment(@Valid @RequestBody Department department){
         departmentService.createDept(department);
         return "Created new Department";
@@ -37,6 +39,7 @@ public class DepartmentController {
     }
 
     @DeleteMapping("/delete/{departmentId}")
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public String deleteDept(@PathVariable("departmentId") int deptId){
         return departmentService.deleteDepartment(deptId);
     }

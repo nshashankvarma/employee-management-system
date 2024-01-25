@@ -9,6 +9,7 @@ import com.hyperface.ems.service.ProjectService;
 
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,7 +27,17 @@ public class ProjectController {
         this.projectService = projectService;
     }
 
+    @GetMapping("{id}")
+    public Project getProjectDetails(@PathVariable int projId){
+        Optional<Project> project = projectService.getProjectDeets(projId);
+        if(project.isEmpty()){
+            throw new ApplicationException(404, "Project not found!","");
+        }
+        return project.get();
+    }
+
     @PostMapping("/create")
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public String createProject(@Valid @RequestBody Project project, @RequestParam(name = "department") int departmentId){
         Optional<Department> department1 = departmentRepo.findById(departmentId);
         if(department1.isEmpty()){
@@ -43,5 +54,11 @@ public class ProjectController {
             throw new ApplicationException(404, "Project not found!","");
         }
         return projectService.getEmployeesUnderProject(projId);
+    }
+
+    @DeleteMapping("/delete/{projectId}")
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
+    public String deleteDept(@PathVariable("projectId") int deptId){
+        return projectService.deleteProject(deptId);
     }
 }
