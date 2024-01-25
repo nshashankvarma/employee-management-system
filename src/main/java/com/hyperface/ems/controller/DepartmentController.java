@@ -22,6 +22,7 @@ public class DepartmentController {
     }
 
     @PostMapping("/create")
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public String createDepartment(@Valid @RequestBody Department department){
         departmentService.createDept(department);
         return "Created new Department";
