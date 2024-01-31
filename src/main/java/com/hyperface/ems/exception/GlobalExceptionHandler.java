@@ -1,5 +1,6 @@
 package com.hyperface.ems.exception;
 
+import io.jsonwebtoken.ExpiredJwtException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -38,6 +39,12 @@ class GlobalExceptionHandler{
         return new ApiErrorResponse(LocalDateTime.now(), HttpStatus.BAD_REQUEST, "Invalid Parameters!", errors.toString());
     }
 
+    @ExceptionHandler(value = ExpiredJwtException.class)
+    @ResponseStatus(HttpStatus.UNAUTHORIZED)
+    public ApiErrorResponse handleExpiredToken(ExpiredJwtException ex){
+        return new ApiErrorResponse(LocalDateTime.now(), HttpStatus.UNAUTHORIZED, ex.getMessage(), "Token has expired, Please login again!");
+    }
+
     @ExceptionHandler(value = AccessDeniedException.class)
     @ResponseStatus(HttpStatus.UNAUTHORIZED)
     public ApiErrorResponse handleAccessDeniedException(AccessDeniedException ex){
@@ -47,8 +54,9 @@ class GlobalExceptionHandler{
     @ExceptionHandler(value = AuthenticationException.class)
     @ResponseStatus(HttpStatus.UNAUTHORIZED)
     public ApiErrorResponse handleForbidden(AuthenticationException ex){
-        return new ApiErrorResponse(LocalDateTime.now(), HttpStatus.UNAUTHORIZED, ex.getMessage(), "No access to this resource");
+        return new ApiErrorResponse(LocalDateTime.now(), HttpStatus.UNAUTHORIZED, ex.getMessage(), "Authentication has failed!");
     }
+
 
 
     @ExceptionHandler(value = UsernameNotFoundException.class)
@@ -60,7 +68,6 @@ class GlobalExceptionHandler{
     @ExceptionHandler(value = Exception.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public ApiErrorResponse fallBack(Exception ex){
-//        System.out.println(ex.getMessage());
         return new ApiErrorResponse(LocalDateTime.now(), HttpStatus.INTERNAL_SERVER_ERROR, "Something went wrong!", ex.getMessage());
     }
 }

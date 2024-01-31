@@ -12,19 +12,19 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class DepartmentService {
+class DepartmentService {
     private DepartmentRepo departmentRepo;
 
-    public DepartmentService(DepartmentRepo departmentRepo) {
+    DepartmentService(DepartmentRepo departmentRepo) {
         super();
         this.departmentRepo = departmentRepo;
     }
 
-    public void createDept(Department department){
+    void createDept(Department department){
         departmentRepo.save(department);
     }
 
-    public List<Project> getProjectsUnderDept(int deptId){
+    List<Project> getProjectsUnderDept(int deptId){
         Optional<Department> department = departmentRepo.findById(deptId);
         if(department.isPresent()){
             return department.get().getProjects();
@@ -32,7 +32,7 @@ public class DepartmentService {
         throw new ApplicationException(404, "Department not found!","");
     }
 
-    public List<Employee> getEmployeesUnderDept(int deptId){
+    List<Employee> getEmployeesUnderDept(int deptId){
         Optional<Department> department = departmentRepo.findById(deptId);
         if(department.isPresent()){
             return department.get().getEmployees();
@@ -41,23 +41,16 @@ public class DepartmentService {
     }
 
     @Transactional
-    public String deleteDepartment(int deptId){
+    String deleteDepartment(int deptId){
         Optional<Department> department = departmentRepo.findById(deptId);
         if(department.isPresent()){
             List<Employee> employees = department.get().getEmployees();
-//            List<Project> projects = department.get().getProjects();
             if(employees!=null){
                 for(Employee e : employees){
                     e.setDepartment(null);
                     e.setProject(null);
                 }
             }
-//            if (projects != null) {
-//                for(Project p :projects){
-//                    p.setDepartment(null);
-//                }
-//            }
-
             departmentRepo.deleteById(deptId);
             return "Deleted " + department.get().getName() + " Successfully";
         }

@@ -15,35 +15,35 @@ import java.util.Optional;
 import java.util.OptionalInt;
 
 @Service
-public class EmployeeService {
+class EmployeeService {
     private EmployeeRepo employeeRepo;
 
     private DepartmentRepo departmentRepo;
 
     private ProjectRepo projectRepo;
 
-    public EmployeeService(EmployeeRepo employeeRepo, DepartmentRepo departmentRepo, ProjectRepo projectRepo) {
+    EmployeeService(EmployeeRepo employeeRepo, DepartmentRepo departmentRepo, ProjectRepo projectRepo) {
         super();
         this.employeeRepo = employeeRepo;
         this.departmentRepo = departmentRepo;
         this.projectRepo = projectRepo;
     }
 
-    public List<Employee> getAllEmployees(){
+    List<Employee> getAllEmployees(){
         return employeeRepo.findAll();
     }
-    public Employee getEmployeeDetails(int empId){
+    Employee getEmployeeDetails(int empId){
         Optional<Employee> employee = employeeRepo.findById(empId);
         if(employee.isPresent()){
             return employee.get();
         }
         throw new ApplicationException(404, "Employee Not Found", "");
     }
-    public Employee createEmployee(Employee employee){
+    Employee createEmployee(Employee employee){
         return employeeRepo.save(employee);
     }
 
-    public void assignDepartmentToEmployee(int empId, int deptId){
+    void assignDepartmentToEmployee(int empId, int deptId){
         Optional<Employee> employee= employeeRepo.findById(empId);
         Optional<Department> department= departmentRepo.findById(deptId);
         if(employee.isPresent() && department.isPresent()){
@@ -56,7 +56,7 @@ public class EmployeeService {
         }
     }
 
-    public void assignProjectToEmployee(int empId, int projId){
+    void assignProjectToEmployee(int empId, int projId){
         Optional<Employee> employee= employeeRepo.findById(empId);
         Optional<Project> project= projectRepo.findById(projId);
         if(employee.isPresent() && project.isPresent()){
@@ -75,7 +75,7 @@ public class EmployeeService {
         }
     }
 
-    public String deleteEmployee(int empId){
+    String deleteEmployee(int empId){
         Optional<Employee> employee = employeeRepo.findById(empId);
         if(employee.isPresent()){
             employeeRepo.deleteById(empId);
