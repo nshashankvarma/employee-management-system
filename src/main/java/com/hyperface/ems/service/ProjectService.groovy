@@ -11,35 +11,41 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class ProjectService {
+class ProjectService {
 
 
     private ProjectRepo projectRepo;
 
-    public ProjectService(ProjectRepo projectRepo) {
+    ProjectService(ProjectRepo projectRepo) {
         super();
         this.projectRepo = projectRepo;
     }
 
-    public Optional<Project> getProjectDeets(int projId){
+    Optional<Project> getProjectDeets(int projId){
         return projectRepo.findById(projId);
     }
 
-    public void createProject(Project project, Department department){
+    void createProject(Project project, Department department){
         project.setDepartment(department);
         projectRepo.save(project);
     }
 
-    public String deleteProject(int projId){
+    String deleteProject(int projId){
         Optional<Project> project = projectRepo.findById(projId);
         if(project.isPresent()){
+            List<Employee> employees = project.get().getEmployees();
+            if(employees!=null){
+                for(Employee e : employees){
+                    e.setProject(null);
+                }
+            }
             projectRepo.deleteById(projId);
             return "Deleted " + project.get().getProjectName() + " Successfully";
         }
         throw new ApplicationException(404, "Project not found!","");
     }
 
-    public List<Employee> getEmployeesUnderProject(int projId){
+    List<Employee> getEmployeesUnderProject(int projId){
         return projectRepo.findById(projId).get().getEmployees();
     }
 }

@@ -4,6 +4,7 @@ import com.hyperface.ems.controller.EmployeeController;
 import com.hyperface.ems.exception.ApplicationException;
 import com.hyperface.ems.model.Employee;
 import com.hyperface.ems.service.EmployeeService;
+import com.hyperface.ems.service.JwtService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -23,6 +24,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WebMvcTest(EmployeeController.class)
 @AutoConfigureMockMvc(addFilters = false)
 public class EmployeeControllerTest {
+
+    @MockBean
+    private JwtService jwtService;
 
     @MockBean
     private EmployeeService employeeService;
