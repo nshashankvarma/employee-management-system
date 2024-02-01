@@ -46,6 +46,11 @@ class ProjectService {
     }
 
     List<Employee> getEmployeesUnderProject(int projId){
-        return projectRepo.findById(projId).get().getEmployees();
+        Optional<Project> project = projectRepo.findById(projId);
+        if(project.isPresent()) {
+            return projectRepo.findById(projId).get().getEmployees();
+        }
+        else
+            throw new ApplicationException(404, "Project not found!","");
     }
 }

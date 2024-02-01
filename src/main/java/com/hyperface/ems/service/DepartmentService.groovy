@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-class DepartmentService {
+public class DepartmentService {
     private DepartmentRepo departmentRepo;
 
     DepartmentService(DepartmentRepo departmentRepo) {
@@ -24,7 +24,7 @@ class DepartmentService {
         departmentRepo.save(department);
     }
 
-    List<Project> getProjectsUnderDept(int deptId){
+    public List<Project> getProjectsUnderDept(int deptId){
         Optional<Department> department = departmentRepo.findById(deptId);
         if(department.isPresent()){
             return department.get().getProjects();
