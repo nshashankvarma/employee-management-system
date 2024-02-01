@@ -1,622 +1,183 @@
-2024-01-31T11:52:32.377+05:30  INFO 8240 --- [main] com.hyperface.ems.EmsApplication         : Starting EmsApplication using Java 17.0.9 with PID 8240 (/home/shashank/Hyperface/ems/build/classes/groovy/main started by shashank in /home/shashank/Hyperface/ems)
-2024-01-31T11:52:32.432+05:30  INFO 8240 --- [main] com.hyperface.ems.EmsApplication         : No active profile set, falling back to 1 default profile: "default"
-2024-01-31T11:52:37.237+05:30  INFO 8240 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-01-31T11:52:37.561+05:30  INFO 8240 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 306 ms. Found 4 JPA repository interfaces.
-2024-01-31T11:52:39.681+05:30  INFO 8240 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-01-31T11:52:39.713+05:30  INFO 8240 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-01-31T11:52:39.714+05:30  INFO 8240 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
-2024-01-31T11:52:40.832+05:30  INFO 8240 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-01-31T11:52:40.833+05:30  INFO 8240 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 6061 ms
-2024-01-31T11:52:41.552+05:30  INFO 8240 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-01-31T11:52:41.764+05:30  INFO 8240 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
-2024-01-31T11:52:41.984+05:30  INFO 8240 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-01-31T11:52:42.698+05:30  INFO 8240 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-01-31T11:52:42.759+05:30  INFO 8240 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-01-31T11:52:43.631+05:30  INFO 8240 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@50fd739d
-2024-01-31T11:52:43.635+05:30  INFO 8240 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-01-31T11:52:43.893+05:30  WARN 8240 --- [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-01-31T11:52:45.880+05:30  INFO 8240 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-01-31T11:52:46.146+05:30  INFO 8240 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-01-31T11:52:46.197+05:30  WARN 8240 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-01-31T11:52:48.473+05:30  INFO 8240 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@668ea404, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6c89c92e, org.springframework.security.web.context.SecurityContextHolderFilter@50ad5625, org.springframework.security.web.header.HeaderWriterFilter@318f47f1, org.springframework.web.filter.CorsFilter@62109320, org.springframework.security.web.authentication.logout.LogoutFilter@125ed27, com.hyperface.ems.filters.JwtAuthFilter@2506b881, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1c5f6292, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@684a34f4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@34d644b5, org.springframework.security.web.session.SessionManagementFilter@665574fb, org.springframework.security.web.access.ExceptionTranslationFilter@38e100ab, org.springframework.security.web.access.intercept.AuthorizationFilter@602d5417]
-2024-01-31T11:52:50.154+05:30  INFO 8240 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-2024-01-31T11:52:50.173+05:30  INFO 8240 --- [main] com.hyperface.ems.EmsApplication         : Started EmsApplication in 19.269 seconds (process running for 20.735)
-2024-01-31T11:53:18.495+05:30  INFO 8240 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-01-31T11:53:18.496+05:30  INFO 8240 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-01-31T11:53:18.501+05:30  INFO 8240 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
-2024-01-31T11:53:18.693+05:30  INFO 8240 --- [http-nio-8080-exec-2] c.hyperface.ems.filters.LoggingFilter    : Request received - Method: POST, URI: /auth/generateToken
-2024-01-31T11:53:20.815+05:30  INFO 8240 --- [http-nio-8080-exec-2] c.hyperface.ems.filters.LoggingFilter    : Response status: 200
-2024-01-31T11:53:24.242+05:30  INFO 8240 --- [http-nio-8080-exec-3] c.hyperface.ems.filters.LoggingFilter    : Request received - Method: POST, URI: /auth/generateToken
-2024-01-31T11:53:24.469+05:30  INFO 8240 --- [http-nio-8080-exec-3] c.hyperface.ems.filters.LoggingFilter    : Response status: 200
-2024-01-31T11:54:04.888+05:30  INFO 8240 --- [http-nio-8080-exec-5] c.hyperface.ems.filters.LoggingFilter    : Request received - Method: POST, URI: /auth/generateToken
-2024-01-31T11:54:05.109+05:30  INFO 8240 --- [http-nio-8080-exec-5] c.hyperface.ems.filters.LoggingFilter    : Response status: 200
-2024-01-31T11:54:22.303+05:30  INFO 8240 --- [http-nio-8080-exec-6] c.hyperface.ems.filters.LoggingFilter    : Request received - Method: POST, URI: /api/project/create
-2024-01-31T11:54:22.648+05:30  INFO 8240 --- [http-nio-8080-exec-6] c.hyperface.ems.filters.LoggingFilter    : Response status: 401
-2024-01-31T11:55:13.200+05:30  INFO 8240 --- [http-nio-8080-exec-7] c.hyperface.ems.filters.LoggingFilter    : Request received - Method: POST, URI: /auth/generateToken
-2024-01-31T11:55:13.425+05:30  INFO 8240 --- [http-nio-8080-exec-7] c.hyperface.ems.filters.LoggingFilter    : Response status: 200
-2024-01-31T11:55:44.216+05:30  INFO 8240 --- [http-nio-8080-exec-8] c.hyperface.ems.filters.LoggingFilter    : Request received - Method: POST, URI: /api/project/create
-2024-01-31T11:55:44.222+05:30  INFO 8240 --- [http-nio-8080-exec-8] c.hyperface.ems.filters.LoggingFilter    : Response status: 401
-2024-01-31T11:55:48.527+05:30  INFO 8240 --- [http-nio-8080-exec-9] c.hyperface.ems.filters.LoggingFilter    : Request received - Method: POST, URI: /api/project/create
-2024-01-31T11:55:48.534+05:30  INFO 8240 --- [http-nio-8080-exec-9] c.hyperface.ems.filters.LoggingFilter    : Response status: 401
-2024-01-31T11:57:07.956+05:30  INFO 8240 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-01-31T11:57:07.995+05:30  INFO 8240 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-01-31T11:57:08.086+05:30  INFO 8240 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-01-31T11:57:27.649+05:30  INFO 8594 --- [main] com.hyperface.ems.EmsApplication         : Starting EmsApplication using Java 17.0.9 with PID 8594 (/home/shashank/Hyperface/ems/build/classes/groovy/main started by shashank in /home/shashank/Hyperface/ems)
-2024-01-31T11:57:27.656+05:30  INFO 8594 --- [main] com.hyperface.ems.EmsApplication         : No active profile set, falling back to 1 default profile: "default"
-2024-01-31T11:57:30.393+05:30  INFO 8594 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-01-31T11:57:30.715+05:30  INFO 8594 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 306 ms. Found 4 JPA repository interfaces.
-2024-01-31T11:57:32.107+05:30  INFO 8594 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-01-31T11:57:32.139+05:30  INFO 8594 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-01-31T11:57:32.140+05:30  INFO 8594 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
-2024-01-31T11:57:32.379+05:30  INFO 8594 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-01-31T11:57:32.380+05:30  INFO 8594 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3953 ms
-2024-01-31T11:57:33.035+05:30  INFO 8594 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-01-31T11:57:33.245+05:30  INFO 8594 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
-2024-01-31T11:57:33.423+05:30  INFO 8594 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-01-31T11:57:34.157+05:30  INFO 8594 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-01-31T11:57:34.249+05:30  INFO 8594 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-01-31T11:57:34.658+05:30  INFO 8594 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3f1d6a13
-2024-01-31T11:57:34.662+05:30  INFO 8594 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-01-31T11:57:34.751+05:30  WARN 8594 --- [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-01-31T11:57:36.808+05:30  INFO 8594 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-01-31T11:57:36.965+05:30  INFO 8594 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-01-31T11:57:37.015+05:30  WARN 8594 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-01-31T11:57:39.355+05:30  INFO 8594 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1a16583d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@59da4992, org.springframework.security.web.context.SecurityContextHolderFilter@6c54d0dc, org.springframework.security.web.header.HeaderWriterFilter@3b32f0b4, org.springframework.web.filter.CorsFilter@20425fab, org.springframework.security.web.authentication.logout.LogoutFilter@29897daf, com.hyperface.ems.filters.JwtAuthFilter@17c4dc5b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7c74ef4a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@54519d74, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@71c2cb26, org.springframework.security.web.session.SessionManagementFilter@3280a79a, org.springframework.security.web.access.ExceptionTranslationFilter@18918ab9, org.springframework.security.web.access.intercept.AuthorizationFilter@43600de0]
-2024-01-31T11:57:40.534+05:30  INFO 8594 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-2024-01-31T11:57:40.554+05:30  INFO 8594 --- [main] com.hyperface.ems.EmsApplication         : Started EmsApplication in 14.148 seconds (process running for 15.351)
-2024-01-31T11:57:55.055+05:30  INFO 8594 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-01-31T11:57:55.056+05:30  INFO 8594 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-01-31T11:57:55.059+05:30  INFO 8594 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2024-01-31T11:57:55.127+05:30  INFO 8594 --- [http-nio-8080-exec-1] c.hyperface.ems.filters.LoggingFilter    : Request received - Method: POST, URI: /auth/generateToken
-2024-01-31T11:57:56.360+05:30  INFO 8594 --- [http-nio-8080-exec-1] c.hyperface.ems.filters.LoggingFilter    : Response status: 200
-2024-01-31T11:58:30.459+05:30  INFO 8594 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-01-31T11:58:30.465+05:30  INFO 8594 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-01-31T11:58:30.485+05:30  INFO 8594 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-01-31T11:58:40.500+05:30  INFO 8846 --- [main] com.hyperface.ems.EmsApplication         : Starting EmsApplication using Java 17.0.9 with PID 8846 (/home/shashank/Hyperface/ems/build/classes/groovy/main started by shashank in /home/shashank/Hyperface/ems)
-2024-01-31T11:58:40.505+05:30  INFO 8846 --- [main] com.hyperface.ems.EmsApplication         : No active profile set, falling back to 1 default profile: "default"
-2024-01-31T11:58:42.446+05:30  INFO 8846 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-01-31T11:58:42.696+05:30  INFO 8846 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 235 ms. Found 4 JPA repository interfaces.
-2024-01-31T11:58:43.800+05:30  INFO 8846 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-01-31T11:58:43.833+05:30  INFO 8846 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-01-31T11:58:43.834+05:30  INFO 8846 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
-2024-01-31T11:58:43.953+05:30  INFO 8846 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-01-31T11:58:43.954+05:30  INFO 8846 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2766 ms
-2024-01-31T11:58:44.365+05:30  INFO 8846 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-01-31T11:58:44.499+05:30  INFO 8846 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
-2024-01-31T11:58:44.769+05:30  INFO 8846 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-01-31T11:58:45.570+05:30  INFO 8846 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-01-31T11:58:45.661+05:30  INFO 8846 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-01-31T11:58:46.132+05:30  INFO 8846 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@44a14de0
-2024-01-31T11:58:46.137+05:30  INFO 8846 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-01-31T11:58:46.246+05:30  WARN 8846 --- [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-01-31T11:58:48.113+05:30  INFO 8846 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-01-31T11:58:48.254+05:30  INFO 8846 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-01-31T11:58:48.317+05:30  WARN 8846 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-01-31T11:58:50.267+05:30  INFO 8846 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@34d644b5, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@276b68af, org.springframework.security.web.context.SecurityContextHolderFilter@684a34f4, org.springframework.security.web.header.HeaderWriterFilter@3280a79a, org.springframework.web.filter.CorsFilter@50915d5, org.springframework.security.web.authentication.logout.LogoutFilter@43600de0, com.hyperface.ems.filters.JwtAuthFilter@1a914089, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5f606ab6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@384cd83a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@63661fc7, org.springframework.security.web.session.SessionManagementFilter@50ad5625, org.springframework.security.web.access.ExceptionTranslationFilter@900ffc4, org.springframework.security.web.access.intercept.AuthorizationFilter@668ea404]
-2024-01-31T11:58:51.629+05:30  INFO 8846 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-2024-01-31T11:58:51.656+05:30  INFO 8846 --- [main] com.hyperface.ems.EmsApplication         : Started EmsApplication in 11.998 seconds (process running for 13.045)
-2024-01-31T11:58:56.049+05:30  INFO 8846 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-01-31T11:58:56.050+05:30  INFO 8846 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-01-31T11:58:56.053+05:30  INFO 8846 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2024-01-31T11:59:15.745+05:30  INFO 8846 --- [http-nio-8080-exec-3] c.hyperface.ems.filters.LoggingFilter    : Request received - Method: POST, URI: /auth/generateToken
-2024-01-31T11:59:16.326+05:30  INFO 8846 --- [http-nio-8080-exec-3] c.hyperface.ems.filters.LoggingFilter    : Response status: 200
-2024-01-31T11:59:23.858+05:30  INFO 8846 --- [http-nio-8080-exec-4] c.hyperface.ems.filters.LoggingFilter    : Request received - Method: POST, URI: /api/dept/create
-2024-01-31T11:59:25.308+05:30  INFO 8846 --- [http-nio-8080-exec-4] c.hyperface.ems.filters.LoggingFilter    : Response status: 200
-2024-01-31T11:59:42.738+05:30  INFO 8846 --- [http-nio-8080-exec-5] c.hyperface.ems.filters.LoggingFilter    : Request received - Method: POST, URI: /api/project/create
-2024-01-31T11:59:42.877+05:30  INFO 8846 --- [http-nio-8080-exec-5] c.hyperface.ems.filters.LoggingFilter    : Response status: 401
-2024-01-31T11:59:53.097+05:30  INFO 8846 --- [http-nio-8080-exec-6] c.hyperface.ems.filters.LoggingFilter    : Request received - Method: POST, URI: /api/employee/create
-2024-01-31T11:59:53.588+05:30  INFO 8846 --- [http-nio-8080-exec-6] c.hyperface.ems.filters.LoggingFilter    : Response status: 201
-2024-01-31T12:00:23.453+05:30  INFO 8846 --- [http-nio-8080-exec-7] c.hyperface.ems.filters.LoggingFilter    : Request received - Method: POST, URI: /api/employee/assignDept
-2024-01-31T12:00:23.749+05:30  INFO 8846 --- [http-nio-8080-exec-7] c.hyperface.ems.filters.LoggingFilter    : Response status: 200
-2024-01-31T12:00:38.481+05:30  INFO 8846 --- [http-nio-8080-exec-8] c.hyperface.ems.filters.LoggingFilter    : Request received - Method: POST, URI: /api/employee/assignProj
-2024-01-31T12:00:38.498+05:30  INFO 8846 --- [http-nio-8080-exec-8] c.hyperface.ems.filters.LoggingFilter    : Response status: 404
-2024-01-31T12:01:01.280+05:30  INFO 8846 --- [http-nio-8080-exec-9] c.hyperface.ems.filters.LoggingFilter    : Request received - Method: GET, URI: /api/dept/getEmployees/1
-2024-01-31T12:01:01.334+05:30  INFO 8846 --- [http-nio-8080-exec-9] c.hyperface.ems.filters.LoggingFilter    : Response status: 200
-2024-01-31T12:01:32.770+05:30  INFO 8846 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-01-31T12:01:32.817+05:30  INFO 8846 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-01-31T12:01:32.951+05:30  INFO 8846 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-01-31T12:01:52.686+05:30  INFO 9130 --- [main] com.hyperface.ems.EmsApplication         : Starting EmsApplication using Java 17.0.9 with PID 9130 (/home/shashank/Hyperface/ems/build/classes/groovy/main started by shashank in /home/shashank/Hyperface/ems)
-2024-01-31T12:01:52.694+05:30  INFO 9130 --- [main] com.hyperface.ems.EmsApplication         : No active profile set, falling back to 1 default profile: "default"
-2024-01-31T12:01:55.656+05:30  INFO 9130 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-01-31T12:01:56.302+05:30  INFO 9130 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 630 ms. Found 4 JPA repository interfaces.
-2024-01-31T12:01:58.127+05:30  INFO 9130 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-01-31T12:01:58.165+05:30  INFO 9130 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-01-31T12:01:58.166+05:30  INFO 9130 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
-2024-01-31T12:01:58.340+05:30  INFO 9130 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-01-31T12:01:58.341+05:30  INFO 9130 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4880 ms
-2024-01-31T12:01:58.976+05:30  INFO 9130 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-01-31T12:01:59.285+05:30  INFO 9130 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
-2024-01-31T12:01:59.423+05:30  INFO 9130 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-01-31T12:02:01.747+05:30  INFO 9130 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-01-31T12:02:02.058+05:30  INFO 9130 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-01-31T12:02:02.948+05:30  INFO 9130 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7434ee13
-2024-01-31T12:02:02.952+05:30  INFO 9130 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-01-31T12:02:03.080+05:30  WARN 9130 --- [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-01-31T12:02:04.970+05:30  INFO 9130 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-01-31T12:02:05.095+05:30  INFO 9130 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-01-31T12:02:05.139+05:30  WARN 9130 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-01-31T12:02:06.975+05:30  INFO 9130 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@75128cf, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@33ccab9c, org.springframework.security.web.context.SecurityContextHolderFilter@3eb7ff78, org.springframework.security.web.header.HeaderWriterFilter@38e100ab, org.springframework.web.filter.CorsFilter@668ea404, org.springframework.security.web.authentication.logout.LogoutFilter@374712f8, com.hyperface.ems.filters.JwtAuthFilter@7b9088f2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@50ad5625, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1d921267, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6c89c92e, org.springframework.security.web.session.SessionManagementFilter@1ec96512, org.springframework.security.web.access.ExceptionTranslationFilter@3a3375d8, org.springframework.security.web.access.intercept.AuthorizationFilter@593db293]
-2024-01-31T12:02:08.298+05:30  INFO 9130 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-2024-01-31T12:02:08.316+05:30  INFO 9130 --- [main] com.hyperface.ems.EmsApplication         : Started EmsApplication in 16.967 seconds (process running for 18.263)
-2024-01-31T12:02:15.428+05:30  INFO 9130 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-01-31T12:02:15.429+05:30  INFO 9130 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-01-31T12:02:15.432+05:30  INFO 9130 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2024-01-31T12:02:15.968+05:30  INFO 9130 --- [http-nio-8080-exec-1] c.hyperface.ems.filters.LoggingFilter    : Request received - Method: POST, URI: /api/dept/create
-2024-01-31T12:02:16.332+05:30  INFO 9130 --- [http-nio-8080-exec-1] c.hyperface.ems.filters.LoggingFilter    : Response status: 401
-2024-01-31T12:02:30.795+05:30  INFO 9130 --- [http-nio-8080-exec-3] c.hyperface.ems.filters.LoggingFilter    : Request received - Method: POST, URI: /api/dept/create
-2024-01-31T12:02:30.802+05:30  INFO 9130 --- [http-nio-8080-exec-3] c.hyperface.ems.filters.LoggingFilter    : Response status: 401
-2024-01-31T12:02:34.742+05:30  INFO 9130 --- [http-nio-8080-exec-4] c.hyperface.ems.filters.LoggingFilter    : Request received - Method: POST, URI: /auth/generateToken
-2024-01-31T12:02:35.221+05:30  INFO 9130 --- [http-nio-8080-exec-4] c.hyperface.ems.filters.LoggingFilter    : Response status: 200
-2024-01-31T12:02:43.695+05:30  INFO 9130 --- [http-nio-8080-exec-5] c.hyperface.ems.filters.LoggingFilter    : Request received - Method: POST, URI: /api/dept/create
-2024-01-31T12:02:44.070+05:30  INFO 9130 --- [http-nio-8080-exec-5] c.hyperface.ems.filters.LoggingFilter    : Response status: 200
-2024-01-31T12:02:56.960+05:30  INFO 9130 --- [http-nio-8080-exec-6] c.hyperface.ems.filters.LoggingFilter    : Request received - Method: POST, URI: /auth/generateToken
-2024-01-31T12:02:57.180+05:30  INFO 9130 --- [http-nio-8080-exec-6] c.hyperface.ems.filters.LoggingFilter    : Response status: 401
-2024-01-31T12:03:26.233+05:30  INFO 9130 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-01-31T12:03:26.239+05:30  INFO 9130 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-01-31T12:03:26.261+05:30  INFO 9130 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-01-31T12:03:37.844+05:30  INFO 9383 --- [main] com.hyperface.ems.EmsApplication         : Starting EmsApplication using Java 17.0.9 with PID 9383 (/home/shashank/Hyperface/ems/build/classes/groovy/main started by shashank in /home/shashank/Hyperface/ems)
-2024-01-31T12:03:37.848+05:30  INFO 9383 --- [main] com.hyperface.ems.EmsApplication         : No active profile set, falling back to 1 default profile: "default"
-2024-01-31T12:03:39.609+05:30  INFO 9383 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-01-31T12:03:39.845+05:30  INFO 9383 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 222 ms. Found 4 JPA repository interfaces.
-2024-01-31T12:03:40.928+05:30  INFO 9383 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-01-31T12:03:40.960+05:30  INFO 9383 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-01-31T12:03:40.961+05:30  INFO 9383 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
-2024-01-31T12:03:41.076+05:30  INFO 9383 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-01-31T12:03:41.077+05:30  INFO 9383 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2674 ms
-2024-01-31T12:03:41.465+05:30  INFO 9383 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-01-31T12:03:41.552+05:30  INFO 9383 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
-2024-01-31T12:03:41.610+05:30  INFO 9383 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-01-31T12:03:42.006+05:30  INFO 9383 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-01-31T12:03:42.050+05:30  INFO 9383 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-01-31T12:03:42.308+05:30  INFO 9383 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@50fd739d
-2024-01-31T12:03:42.312+05:30  INFO 9383 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-01-31T12:03:42.403+05:30  WARN 9383 --- [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-01-31T12:03:44.085+05:30  INFO 9383 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-01-31T12:03:44.234+05:30  INFO 9383 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-01-31T12:03:44.283+05:30  WARN 9383 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-01-31T12:03:45.889+05:30  INFO 9383 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@34d644b5, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@276b68af, org.springframework.security.web.context.SecurityContextHolderFilter@684a34f4, org.springframework.security.web.header.HeaderWriterFilter@3280a79a, org.springframework.web.filter.CorsFilter@50915d5, org.springframework.security.web.authentication.logout.LogoutFilter@43600de0, com.hyperface.ems.filters.JwtAuthFilter@43d76a92, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5f606ab6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@384cd83a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@63661fc7, org.springframework.security.web.session.SessionManagementFilter@50ad5625, org.springframework.security.web.access.ExceptionTranslationFilter@900ffc4, org.springframework.security.web.access.intercept.AuthorizationFilter@668ea404]
-2024-01-31T12:03:47.019+05:30  INFO 9383 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-2024-01-31T12:03:47.038+05:30  INFO 9383 --- [main] com.hyperface.ems.EmsApplication         : Started EmsApplication in 10.018 seconds (process running for 10.646)
-2024-01-31T12:03:56.600+05:30  INFO 9383 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-01-31T12:03:56.601+05:30  INFO 9383 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-01-31T12:03:56.604+05:30  INFO 9383 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2024-01-31T12:03:57.076+05:30  INFO 9383 --- [http-nio-8080-exec-2] c.hyperface.ems.filters.LoggingFilter    : Request received - Method: POST, URI: /api/project/create
-2024-01-31T12:03:57.340+05:30  INFO 9383 --- [http-nio-8080-exec-2] c.hyperface.ems.filters.LoggingFilter    : Response status: 401
-2024-01-31T12:04:05.045+05:30  INFO 9383 --- [http-nio-8080-exec-3] c.hyperface.ems.filters.LoggingFilter    : Request received - Method: POST, URI: /auth/generateToken
-2024-01-31T12:04:05.527+05:30  INFO 9383 --- [http-nio-8080-exec-3] c.hyperface.ems.filters.LoggingFilter    : Response status: 200
-2024-01-31T12:04:13.545+05:30  INFO 9383 --- [http-nio-8080-exec-4] c.hyperface.ems.filters.LoggingFilter    : Request received - Method: POST, URI: /api/project/create
-2024-01-31T12:04:14.389+05:30  INFO 9383 --- [http-nio-8080-exec-4] c.hyperface.ems.filters.LoggingFilter    : Response status: 200
-2024-01-31T12:04:23.399+05:30  INFO 9383 --- [http-nio-8080-exec-5] c.hyperface.ems.filters.LoggingFilter    : Request received - Method: POST, URI: /api/employee/assignDept
-2024-01-31T12:04:23.427+05:30  INFO 9383 --- [http-nio-8080-exec-5] c.hyperface.ems.filters.LoggingFilter    : Response status: 200
-2024-01-31T12:04:35.288+05:30  INFO 9383 --- [http-nio-8080-exec-6] c.hyperface.ems.filters.LoggingFilter    : Request received - Method: POST, URI: /api/employee/assignProj
-2024-01-31T12:04:35.680+05:30  INFO 9383 --- [http-nio-8080-exec-6] c.hyperface.ems.filters.LoggingFilter    : Response status: 200
-2024-01-31T12:05:14.702+05:30  INFO 9383 --- [http-nio-8080-exec-7] c.hyperface.ems.filters.LoggingFilter    : Request received - Method: DELETE, URI: /api/project/delete/1
-2024-01-31T12:05:15.171+05:30  WARN 9383 --- [http-nio-8080-exec-7] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1451, SQLState: 23000
-2024-01-31T12:05:15.172+05:30 ERROR 9383 --- [http-nio-8080-exec-7] o.h.engine.jdbc.spi.SqlExceptionHelper   : Cannot delete or update a parent row: a foreign key constraint fails (`ems`.`employee`, CONSTRAINT `FKt7hn4e5o1y2vv3gawqldhhsj8` FOREIGN KEY (`project_id`) REFERENCES `project` (`id`))
-2024-01-31T12:05:15.289+05:30  INFO 9383 --- [http-nio-8080-exec-7] c.hyperface.ems.filters.LoggingFilter    : Response status: 500
-2024-01-31T12:05:43.596+05:30  INFO 9383 --- [http-nio-8080-exec-9] c.hyperface.ems.filters.LoggingFilter    : Request received - Method: DELETE, URI: /api/dept/delete/1
-2024-01-31T12:05:43.847+05:30  INFO 9383 --- [http-nio-8080-exec-9] c.hyperface.ems.filters.LoggingFilter    : Response status: 200
-2024-01-31T12:06:23.262+05:30  INFO 9383 --- [http-nio-8080-exec-10] c.hyperface.ems.filters.LoggingFilter    : Request received - Method: POST, URI: /api/project/create
-2024-01-31T12:06:23.273+05:30  INFO 9383 --- [http-nio-8080-exec-10] c.hyperface.ems.filters.LoggingFilter    : Response status: 404
-2024-01-31T12:06:29.094+05:30  INFO 9383 --- [http-nio-8080-exec-1] c.hyperface.ems.filters.LoggingFilter    : Request received - Method: POST, URI: /api/project/create
-2024-01-31T12:06:29.498+05:30  INFO 9383 --- [http-nio-8080-exec-1] c.hyperface.ems.filters.LoggingFilter    : Response status: 200
-2024-01-31T12:06:37.089+05:30  INFO 9383 --- [http-nio-8080-exec-2] c.hyperface.ems.filters.LoggingFilter    : Request received - Method: POST, URI: /api/employee/assignDept
-2024-01-31T12:06:37.212+05:30  INFO 9383 --- [http-nio-8080-exec-2] c.hyperface.ems.filters.LoggingFilter    : Response status: 200
-2024-01-31T12:06:48.558+05:30  INFO 9383 --- [http-nio-8080-exec-3] c.hyperface.ems.filters.LoggingFilter    : Request received - Method: POST, URI: /api/employee/assignProj
-2024-01-31T12:06:48.750+05:30  INFO 9383 --- [http-nio-8080-exec-3] c.hyperface.ems.filters.LoggingFilter    : Response status: 200
-2024-01-31T12:07:26.116+05:30  INFO 9383 --- [http-nio-8080-exec-4] c.hyperface.ems.filters.LoggingFilter    : Request received - Method: DELETE, URI: /api/project/delete/1
-2024-01-31T12:07:26.126+05:30  INFO 9383 --- [http-nio-8080-exec-4] c.hyperface.ems.filters.LoggingFilter    : Response status: 404
-2024-01-31T12:08:24.190+05:30  INFO 9383 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-01-31T12:08:24.195+05:30  INFO 9383 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-01-31T12:08:24.213+05:30  INFO 9383 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-01-31T12:08:33.091+05:30  INFO 9705 --- [main] com.hyperface.ems.EmsApplication         : Starting EmsApplication using Java 17.0.9 with PID 9705 (/home/shashank/Hyperface/ems/build/classes/groovy/main started by shashank in /home/shashank/Hyperface/ems)
-2024-01-31T12:08:33.096+05:30  INFO 9705 --- [main] com.hyperface.ems.EmsApplication         : No active profile set, falling back to 1 default profile: "default"
-2024-01-31T12:08:35.249+05:30  INFO 9705 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-01-31T12:08:35.573+05:30  INFO 9705 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 301 ms. Found 4 JPA repository interfaces.
-2024-01-31T12:08:36.901+05:30  INFO 9705 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-01-31T12:08:36.939+05:30  INFO 9705 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-01-31T12:08:36.940+05:30  INFO 9705 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
-2024-01-31T12:08:37.067+05:30  INFO 9705 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-01-31T12:08:37.068+05:30  INFO 9705 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3339 ms
-2024-01-31T12:08:37.504+05:30  INFO 9705 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-01-31T12:08:37.590+05:30  INFO 9705 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
-2024-01-31T12:08:37.648+05:30  INFO 9705 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-01-31T12:08:38.022+05:30  INFO 9705 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-01-31T12:08:38.073+05:30  INFO 9705 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-01-31T12:08:38.378+05:30  INFO 9705 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@d0a2c82
-2024-01-31T12:08:38.382+05:30  INFO 9705 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-01-31T12:08:38.468+05:30  WARN 9705 --- [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-01-31T12:08:40.230+05:30  INFO 9705 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-01-31T12:08:40.378+05:30  INFO 9705 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-01-31T12:08:40.448+05:30  WARN 9705 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-01-31T12:08:41.939+05:30  INFO 9705 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@34d644b5, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@276b68af, org.springframework.security.web.context.SecurityContextHolderFilter@684a34f4, org.springframework.security.web.header.HeaderWriterFilter@3280a79a, org.springframework.web.filter.CorsFilter@50915d5, org.springframework.security.web.authentication.logout.LogoutFilter@43600de0, com.hyperface.ems.filters.JwtAuthFilter@350323a0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5f606ab6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@384cd83a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@63661fc7, org.springframework.security.web.session.SessionManagementFilter@50ad5625, org.springframework.security.web.access.ExceptionTranslationFilter@900ffc4, org.springframework.security.web.access.intercept.AuthorizationFilter@668ea404]
-2024-01-31T12:08:42.977+05:30  INFO 9705 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-2024-01-31T12:08:42.997+05:30  INFO 9705 --- [main] com.hyperface.ems.EmsApplication         : Started EmsApplication in 10.687 seconds (process running for 11.276)
-2024-01-31T12:08:52.322+05:30  INFO 9705 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-01-31T12:08:52.323+05:30  INFO 9705 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-01-31T12:08:52.327+05:30  INFO 9705 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2024-01-31T12:08:52.825+05:30  INFO 9705 --- [http-nio-8080-exec-1] c.hyperface.ems.filters.LoggingFilter    : Request received - Method: DELETE, URI: /api/project/delete/2
-2024-01-31T12:08:53.272+05:30  INFO 9705 --- [http-nio-8080-exec-1] c.hyperface.ems.filters.LoggingFilter    : Response status: 200
-2024-01-31T12:34:36.675+05:30  INFO 9705 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-01-31T12:34:36.736+05:30  INFO 9705 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-01-31T12:34:36.807+05:30  INFO 9705 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-01-31T12:50:31.202+05:30  INFO 13685 --- [main] com.hyperface.ems.EmsApplication         : Starting EmsApplication using Java 17.0.9 with PID 13685 (/home/shashank/Hyperface/ems/build/classes/groovy/main started by shashank in /home/shashank/Hyperface/ems)
-2024-01-31T12:50:31.241+05:30  INFO 13685 --- [main] com.hyperface.ems.EmsApplication         : No active profile set, falling back to 1 default profile: "default"
-2024-01-31T12:50:34.431+05:30  INFO 13685 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-01-31T12:50:34.914+05:30  INFO 13685 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 473 ms. Found 4 JPA repository interfaces.
-2024-01-31T12:50:38.984+05:30  INFO 13685 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-01-31T12:50:39.039+05:30  INFO 13685 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-01-31T12:50:39.039+05:30  INFO 13685 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
-2024-01-31T12:50:39.292+05:30  INFO 13685 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-01-31T12:50:39.292+05:30  INFO 13685 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 7110 ms
-2024-01-31T12:50:39.894+05:30  INFO 13685 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-01-31T12:50:40.190+05:30  INFO 13685 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
-2024-01-31T12:50:40.346+05:30  INFO 13685 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-01-31T12:50:41.371+05:30  INFO 13685 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-01-31T12:50:41.405+05:30  INFO 13685 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-01-31T12:50:42.956+05:30  INFO 13685 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@30e2016a
-2024-01-31T12:50:43.058+05:30  INFO 13685 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-01-31T12:50:43.352+05:30  WARN 13685 --- [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-01-31T12:50:46.063+05:30  INFO 13685 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-01-31T12:50:46.713+05:30  INFO 13685 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-01-31T12:50:46.752+05:30  WARN 13685 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-01-31T12:50:48.464+05:30  INFO 13685 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@24244ea, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@69c7fb94, org.springframework.security.web.context.SecurityContextHolderFilter@2b20caed, org.springframework.security.web.header.HeaderWriterFilter@1c5f6292, org.springframework.web.filter.CorsFilter@67c61551, org.springframework.security.web.authentication.logout.LogoutFilter@62109320, com.hyperface.ems.filters.JwtAuthFilter@7ac48e10, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7c1f3125, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@44b1d2fa, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7bca98d5, org.springframework.security.web.session.SessionManagementFilter@4b9a1be5, org.springframework.security.web.access.ExceptionTranslationFilter@50ad5625, org.springframework.security.web.access.intercept.AuthorizationFilter@6421e9e7]
-2024-01-31T12:50:49.312+05:30  INFO 13685 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-2024-01-31T12:50:49.323+05:30  INFO 13685 --- [main] com.hyperface.ems.EmsApplication         : Started EmsApplication in 19.192 seconds (process running for 21.628)
-2024-01-31T12:50:55.763+05:30  INFO 13685 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-01-31T12:50:55.764+05:30  INFO 13685 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-01-31T12:50:55.765+05:30  INFO 13685 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2024-01-31T12:50:56.103+05:30 ERROR 13685 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
-
-io.jsonwebtoken.ExpiredJwtException: JWT expired 1101101 milliseconds ago at 2024-01-31T07:02:35.000Z. Current time: 2024-01-31T07:20:56.101Z. Allowed clock skew: 0 milliseconds.
-	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:682) ~[jjwt-impl-0.12.3.jar:0.12.3]
-	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:362) ~[jjwt-impl-0.12.3.jar:0.12.3]
-	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:94) ~[jjwt-impl-0.12.3.jar:0.12.3]
-	at io.jsonwebtoken.impl.io.AbstractParser.parse(AbstractParser.java:36) ~[jjwt-impl-0.12.3.jar:0.12.3]
-	at io.jsonwebtoken.impl.io.AbstractParser.parse(AbstractParser.java:29) ~[jjwt-impl-0.12.3.jar:0.12.3]
-	at io.jsonwebtoken.impl.DefaultJwtParser.parseSignedClaims(DefaultJwtParser.java:821) ~[jjwt-impl-0.12.3.jar:0.12.3]
-	at io.jsonwebtoken.JwtParser$parseSignedClaims.call(Unknown Source) ~[na:na]
-	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47) ~[groovy-3.0.20.jar:3.0.20]
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125) ~[groovy-3.0.20.jar:3.0.20]
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139) ~[groovy-3.0.20.jar:3.0.20]
-	at com.hyperface.ems.service.JwtService.extractAllClaims(JwtService.groovy:62) ~[main/:na]
-	at com.hyperface.ems.service.JwtService.extractClaim(JwtService.groovy:55) ~[main/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
-	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:48) ~[groovy-3.0.20.jar:3.0.20]
-	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrap.invoke(PogoMetaMethodSite.java:178) ~[groovy-3.0.20.jar:3.0.20]
-	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:57) ~[groovy-3.0.20.jar:3.0.20]
-	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:51) ~[groovy-3.0.20.jar:3.0.20]
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171) ~[groovy-3.0.20.jar:3.0.20]
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:194) ~[groovy-3.0.20.jar:3.0.20]
-	at com.hyperface.ems.service.JwtService.extractUsername(JwtService.groovy:47) ~[main/:na]
-	at com.hyperface.ems.filters.JwtAuthFilter.doFilterInternal(JwtAuthFilter.java:36) ~[main/:na]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.2.jar:6.1.2]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.1.jar:6.2.1]
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.2.1.jar:6.2.1]
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.2.1.jar:6.2.1]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.1.jar:6.2.1]
-	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-6.1.2.jar:6.1.2]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.2.jar:6.1.2]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.1.jar:6.2.1]
-	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.2.1.jar:6.2.1]
-	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.2.1.jar:6.2.1]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.2.jar:6.1.2]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.1.jar:6.2.1]
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.2.1.jar:6.2.1]
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.2.1.jar:6.2.1]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.1.jar:6.2.1]
-	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.2.1.jar:6.2.1]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.2.jar:6.1.2]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.1.jar:6.2.1]
-	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.2.1.jar:6.2.1]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.2.jar:6.1.2]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.1.jar:6.2.1]
-	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.2.1.jar:6.2.1]
-	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.2.1.jar:6.2.1]
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.2.jar:6.1.2]
-	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195) ~[spring-webmvc-6.1.2.jar:6.1.2]
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.2.jar:6.1.2]
-	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.1.2.jar:6.1.2]
-	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:225) ~[spring-security-config-6.2.1.jar:6.2.1]
-	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352) ~[spring-web-6.1.2.jar:6.1.2]
-	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268) ~[spring-web-6.1.2.jar:6.1.2]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.2.jar:6.1.2]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.2.jar:6.1.2]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.2.jar:6.1.2]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.2.jar:6.1.2]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.2.jar:6.1.2]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.2.jar:6.1.2]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
-
-2024-01-31T12:52:03.655+05:30  INFO 13685 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-01-31T12:52:03.711+05:30  INFO 13685 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-01-31T12:52:04.052+05:30  INFO 13685 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-01-31T12:52:26.501+05:30  INFO 14022 --- [main] com.hyperface.ems.EmsApplication         : Starting EmsApplication using Java 17.0.9 with PID 14022 (/home/shashank/Hyperface/ems/build/classes/groovy/main started by shashank in /home/shashank/Hyperface/ems)
-2024-01-31T12:52:26.507+05:30  INFO 14022 --- [main] com.hyperface.ems.EmsApplication         : No active profile set, falling back to 1 default profile: "default"
-2024-01-31T12:52:28.389+05:30  INFO 14022 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-01-31T12:52:28.591+05:30  INFO 14022 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 185 ms. Found 4 JPA repository interfaces.
-2024-01-31T12:52:29.454+05:30  INFO 14022 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-01-31T12:52:29.480+05:30  INFO 14022 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-01-31T12:52:29.481+05:30  INFO 14022 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
-2024-01-31T12:52:29.614+05:30  INFO 14022 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-01-31T12:52:29.614+05:30  INFO 14022 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2678 ms
-2024-01-31T12:52:29.970+05:30  INFO 14022 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-01-31T12:52:30.233+05:30  INFO 14022 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
-2024-01-31T12:52:30.417+05:30  INFO 14022 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-01-31T12:52:30.877+05:30  INFO 14022 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-01-31T12:52:30.910+05:30  INFO 14022 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-01-31T12:52:31.191+05:30  INFO 14022 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6d2db15b
-2024-01-31T12:52:31.195+05:30  INFO 14022 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-01-31T12:52:31.249+05:30  WARN 14022 --- [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-01-31T12:52:32.436+05:30  INFO 14022 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-01-31T12:52:32.511+05:30  INFO 14022 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-01-31T12:52:32.540+05:30  WARN 14022 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-01-31T12:52:33.695+05:30  INFO 14022 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6b9b9cb9, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@18f1631c, org.springframework.security.web.context.SecurityContextHolderFilter@2e5ff1d4, org.springframework.security.web.header.HeaderWriterFilter@2c9af700, org.springframework.web.filter.CorsFilter@3ad5f99, org.springframework.security.web.authentication.logout.LogoutFilter@3d72abea, com.hyperface.ems.filters.JwtAuthFilter@723e2d08, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@59da4992, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@20425fab, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@72b4ecb2, org.springframework.security.web.session.SessionManagementFilter@22b2d9e3, org.springframework.security.web.access.ExceptionTranslationFilter@44b1d2fa, org.springframework.security.web.access.intercept.AuthorizationFilter@578483bd]
-2024-01-31T12:52:34.508+05:30  INFO 14022 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-2024-01-31T12:52:34.520+05:30  INFO 14022 --- [main] com.hyperface.ems.EmsApplication         : Started EmsApplication in 8.878 seconds (process running for 9.984)
-2024-01-31T12:52:51.749+05:30  INFO 14022 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-01-31T12:52:51.749+05:30  INFO 14022 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-01-31T12:52:51.751+05:30  INFO 14022 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2024-01-31T12:52:51.970+05:30 ERROR 14022 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
-
-io.jsonwebtoken.ExpiredJwtException: JWT expired 1216968 milliseconds ago at 2024-01-31T07:02:35.000Z. Current time: 2024-01-31T07:22:51.968Z. Allowed clock skew: 0 milliseconds.
-	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:682) ~[jjwt-impl-0.12.3.jar:0.12.3]
-	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:362) ~[jjwt-impl-0.12.3.jar:0.12.3]
-	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:94) ~[jjwt-impl-0.12.3.jar:0.12.3]
-	at io.jsonwebtoken.impl.io.AbstractParser.parse(AbstractParser.java:36) ~[jjwt-impl-0.12.3.jar:0.12.3]
-	at io.jsonwebtoken.impl.io.AbstractParser.parse(AbstractParser.java:29) ~[jjwt-impl-0.12.3.jar:0.12.3]
-	at io.jsonwebtoken.impl.DefaultJwtParser.parseSignedClaims(DefaultJwtParser.java:821) ~[jjwt-impl-0.12.3.jar:0.12.3]
-	at io.jsonwebtoken.JwtParser$parseSignedClaims.call(Unknown Source) ~[na:na]
-	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47) ~[groovy-3.0.20.jar:3.0.20]
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125) ~[groovy-3.0.20.jar:3.0.20]
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139) ~[groovy-3.0.20.jar:3.0.20]
-	at com.hyperface.ems.service.JwtService.extractAllClaims(JwtService.groovy:62) ~[main/:na]
-	at com.hyperface.ems.service.JwtService.extractClaim(JwtService.groovy:55) ~[main/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
-	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:48) ~[groovy-3.0.20.jar:3.0.20]
-	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrap.invoke(PogoMetaMethodSite.java:178) ~[groovy-3.0.20.jar:3.0.20]
-	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:57) ~[groovy-3.0.20.jar:3.0.20]
-	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:51) ~[groovy-3.0.20.jar:3.0.20]
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171) ~[groovy-3.0.20.jar:3.0.20]
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:194) ~[groovy-3.0.20.jar:3.0.20]
-	at com.hyperface.ems.service.JwtService.extractUsername(JwtService.groovy:47) ~[main/:na]
-	at com.hyperface.ems.filters.JwtAuthFilter.doFilterInternal(JwtAuthFilter.java:36) ~[main/:na]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.2.jar:6.1.2]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.1.jar:6.2.1]
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.2.1.jar:6.2.1]
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.2.1.jar:6.2.1]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.1.jar:6.2.1]
-	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-6.1.2.jar:6.1.2]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.2.jar:6.1.2]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.1.jar:6.2.1]
-	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.2.1.jar:6.2.1]
-	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.2.1.jar:6.2.1]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.2.jar:6.1.2]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.1.jar:6.2.1]
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.2.1.jar:6.2.1]
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.2.1.jar:6.2.1]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.1.jar:6.2.1]
-	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.2.1.jar:6.2.1]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.2.jar:6.1.2]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.1.jar:6.2.1]
-	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.2.1.jar:6.2.1]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.2.jar:6.1.2]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.1.jar:6.2.1]
-	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.2.1.jar:6.2.1]
-	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.2.1.jar:6.2.1]
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.2.jar:6.1.2]
-	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195) ~[spring-webmvc-6.1.2.jar:6.1.2]
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.2.jar:6.1.2]
-	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.1.2.jar:6.1.2]
-	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:225) ~[spring-security-config-6.2.1.jar:6.2.1]
-	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352) ~[spring-web-6.1.2.jar:6.1.2]
-	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268) ~[spring-web-6.1.2.jar:6.1.2]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.2.jar:6.1.2]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.2.jar:6.1.2]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.2.jar:6.1.2]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.2.jar:6.1.2]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.2.jar:6.1.2]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.2.jar:6.1.2]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
-
-2024-01-31T12:53:41.583+05:30  INFO 14022 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-01-31T12:53:41.588+05:30  INFO 14022 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-01-31T12:53:41.595+05:30  INFO 14022 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-01-31T12:53:47.595+05:30  INFO 14258 --- [main] com.hyperface.ems.EmsApplication         : Starting EmsApplication using Java 17.0.9 with PID 14258 (/home/shashank/Hyperface/ems/build/classes/groovy/main started by shashank in /home/shashank/Hyperface/ems)
-2024-01-31T12:53:47.598+05:30  INFO 14258 --- [main] com.hyperface.ems.EmsApplication         : No active profile set, falling back to 1 default profile: "default"
-2024-01-31T12:53:49.810+05:30  INFO 14258 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-01-31T12:53:50.455+05:30  INFO 14258 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 530 ms. Found 4 JPA repository interfaces.
-2024-01-31T12:53:51.949+05:30  INFO 14258 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-01-31T12:53:51.963+05:30  INFO 14258 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-01-31T12:53:51.963+05:30  INFO 14258 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
-2024-01-31T12:53:53.246+05:30  INFO 14258 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-01-31T12:53:53.247+05:30  INFO 14258 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4782 ms
-2024-01-31T12:53:53.760+05:30  INFO 14258 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-01-31T12:53:53.989+05:30  INFO 14258 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
-2024-01-31T12:53:54.117+05:30  INFO 14258 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-01-31T12:53:54.679+05:30  INFO 14258 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-01-31T12:53:54.706+05:30  INFO 14258 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-01-31T12:53:55.372+05:30  INFO 14258 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1b317e7d
-2024-01-31T12:53:55.375+05:30  INFO 14258 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-01-31T12:53:55.442+05:30  WARN 14258 --- [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-01-31T12:53:56.721+05:30  INFO 14258 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-01-31T12:53:56.797+05:30  INFO 14258 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-01-31T12:53:56.850+05:30  WARN 14258 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-01-31T12:53:58.261+05:30  INFO 14258 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@70d24586, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@58e9e852, org.springframework.security.web.context.SecurityContextHolderFilter@62109320, org.springframework.security.web.header.HeaderWriterFilter@22b2d9e3, org.springframework.web.filter.CorsFilter@52238861, org.springframework.security.web.authentication.logout.LogoutFilter@578483bd, com.hyperface.ems.filters.JwtAuthFilter@55361f03, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@276b68af, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@50915d5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@279e4506, org.springframework.security.web.session.SessionManagementFilter@33ccab9c, org.springframework.security.web.access.ExceptionTranslationFilter@125ed27, org.springframework.security.web.access.intercept.AuthorizationFilter@2a10407e]
-2024-01-31T12:53:59.193+05:30  INFO 14258 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-2024-01-31T12:53:59.212+05:30  INFO 14258 --- [main] com.hyperface.ems.EmsApplication         : Started EmsApplication in 12.832 seconds (process running for 13.22)
-2024-01-31T12:54:35.123+05:30  INFO 14258 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-01-31T12:54:35.123+05:30  INFO 14258 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-01-31T12:54:35.126+05:30  INFO 14258 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2024-01-31T12:54:35.544+05:30 ERROR 14258 --- [http-nio-8080-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
-
-io.jsonwebtoken.ExpiredJwtException: JWT expired 1320542 milliseconds ago at 2024-01-31T07:02:35.000Z. Current time: 2024-01-31T07:24:35.542Z. Allowed clock skew: 0 milliseconds.
-	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:682) ~[jjwt-impl-0.12.3.jar:0.12.3]
-	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:362) ~[jjwt-impl-0.12.3.jar:0.12.3]
-	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:94) ~[jjwt-impl-0.12.3.jar:0.12.3]
-	at io.jsonwebtoken.impl.io.AbstractParser.parse(AbstractParser.java:36) ~[jjwt-impl-0.12.3.jar:0.12.3]
-	at io.jsonwebtoken.impl.io.AbstractParser.parse(AbstractParser.java:29) ~[jjwt-impl-0.12.3.jar:0.12.3]
-	at io.jsonwebtoken.impl.DefaultJwtParser.parseSignedClaims(DefaultJwtParser.java:821) ~[jjwt-impl-0.12.3.jar:0.12.3]
-	at io.jsonwebtoken.JwtParser$parseSignedClaims.call(Unknown Source) ~[na:na]
-	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47) ~[groovy-3.0.20.jar:3.0.20]
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125) ~[groovy-3.0.20.jar:3.0.20]
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139) ~[groovy-3.0.20.jar:3.0.20]
-	at com.hyperface.ems.service.JwtService.extractAllClaims(JwtService.groovy:62) ~[main/:na]
-	at com.hyperface.ems.service.JwtService.extractClaim(JwtService.groovy:55) ~[main/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
-	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:48) ~[groovy-3.0.20.jar:3.0.20]
-	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrap.invoke(PogoMetaMethodSite.java:178) ~[groovy-3.0.20.jar:3.0.20]
-	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:57) ~[groovy-3.0.20.jar:3.0.20]
-	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:51) ~[groovy-3.0.20.jar:3.0.20]
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171) ~[groovy-3.0.20.jar:3.0.20]
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:194) ~[groovy-3.0.20.jar:3.0.20]
-	at com.hyperface.ems.service.JwtService.extractUsername(JwtService.groovy:47) ~[main/:na]
-	at com.hyperface.ems.filters.JwtAuthFilter.doFilterInternal(JwtAuthFilter.java:36) ~[main/:na]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.2.jar:6.1.2]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.1.jar:6.2.1]
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.2.1.jar:6.2.1]
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.2.1.jar:6.2.1]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.1.jar:6.2.1]
-	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-6.1.2.jar:6.1.2]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.2.jar:6.1.2]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.1.jar:6.2.1]
-	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.2.1.jar:6.2.1]
-	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.2.1.jar:6.2.1]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.2.jar:6.1.2]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.1.jar:6.2.1]
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.2.1.jar:6.2.1]
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.2.1.jar:6.2.1]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.1.jar:6.2.1]
-	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.2.1.jar:6.2.1]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.2.jar:6.1.2]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.1.jar:6.2.1]
-	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.2.1.jar:6.2.1]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.2.jar:6.1.2]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.1.jar:6.2.1]
-	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.2.1.jar:6.2.1]
-	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.2.1.jar:6.2.1]
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.2.jar:6.1.2]
-	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195) ~[spring-webmvc-6.1.2.jar:6.1.2]
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.2.jar:6.1.2]
-	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.1.2.jar:6.1.2]
-	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:225) ~[spring-security-config-6.2.1.jar:6.2.1]
-	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352) ~[spring-web-6.1.2.jar:6.1.2]
-	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268) ~[spring-web-6.1.2.jar:6.1.2]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.2.jar:6.1.2]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.2.jar:6.1.2]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.2.jar:6.1.2]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.2.jar:6.1.2]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.2.jar:6.1.2]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.2.jar:6.1.2]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
-	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
-
-2024-01-31T12:57:52.009+05:30  INFO 14258 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-01-31T12:57:52.212+05:30  INFO 14258 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-01-31T12:57:52.320+05:30  INFO 14258 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-01-31T12:58:15.067+05:30  INFO 14573 --- [main] com.hyperface.ems.EmsApplication         : Starting EmsApplication using Java 17.0.9 with PID 14573 (/home/shashank/Hyperface/ems/build/classes/groovy/main started by shashank in /home/shashank/Hyperface/ems)
-2024-01-31T12:58:15.070+05:30  INFO 14573 --- [main] com.hyperface.ems.EmsApplication         : No active profile set, falling back to 1 default profile: "default"
-2024-01-31T12:58:17.696+05:30  INFO 14573 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-01-31T12:58:18.043+05:30  INFO 14573 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 319 ms. Found 4 JPA repository interfaces.
-2024-01-31T12:58:19.900+05:30  INFO 14573 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-01-31T12:58:19.963+05:30  INFO 14573 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-01-31T12:58:19.964+05:30  INFO 14573 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
-2024-01-31T12:58:21.517+05:30  INFO 14573 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-01-31T12:58:21.518+05:30  INFO 14573 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5957 ms
-2024-01-31T12:58:21.662+05:30  WARN 14573 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-01-31T12:58:21.993+05:30  INFO 14573 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-01-31T12:58:22.233+05:30  INFO 14573 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
-2024-01-31T12:58:22.327+05:30  INFO 14573 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-01-31T12:58:23.001+05:30  INFO 14573 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-01-31T12:58:23.031+05:30  INFO 14573 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-01-31T12:58:23.627+05:30  INFO 14573 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@a6dffdb
-2024-01-31T12:58:23.630+05:30  INFO 14573 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-01-31T12:58:23.706+05:30  WARN 14573 --- [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-01-31T12:58:25.012+05:30  INFO 14573 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-01-31T12:58:25.222+05:30  INFO 14573 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-01-31T12:58:26.962+05:30  INFO 14573 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@56f4f385, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6b9b9cb9, org.springframework.security.web.context.SecurityContextHolderFilter@6d028c7e, org.springframework.security.web.header.HeaderWriterFilter@69eb1f23, org.springframework.web.filter.CorsFilter@18f1631c, org.springframework.security.web.authentication.logout.LogoutFilter@6bbff652, com.hyperface.ems.filters.JwtAuthFilter@1be4f05c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1a16583d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@59da4992, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3ad5f99, org.springframework.security.web.session.SessionManagementFilter@2dedde74, org.springframework.security.web.access.ExceptionTranslationFilter@7c1f3125, org.springframework.security.web.access.intercept.AuthorizationFilter@79a88f45]
-2024-01-31T12:58:27.805+05:30  INFO 14573 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-2024-01-31T12:58:27.815+05:30  INFO 14573 --- [main] com.hyperface.ems.EmsApplication         : Started EmsApplication in 13.707 seconds (process running for 14.745)
-2024-01-31T12:58:38.605+05:30  INFO 14573 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-01-31T12:58:38.605+05:30  INFO 14573 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-01-31T12:58:38.607+05:30  INFO 14573 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2024-01-31T12:59:01.746+05:30  INFO 14573 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-01-31T12:59:02.165+05:30  INFO 14573 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-01-31T12:59:02.376+05:30  INFO 14573 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-02-01T15:29:12.910+05:30  INFO 20953 --- [main] com.hyperface.ems.EmsApplication         : Starting EmsApplication using Java 17.0.9 with PID 20953 (/home/shashank/Hyperface/ems/build/classes/groovy/main started by shashank in /home/shashank/Hyperface/ems)
+2024-02-01T15:29:12.928+05:30  INFO 20953 --- [main] com.hyperface.ems.EmsApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-02-01T15:29:16.621+05:30  INFO 20953 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-01T15:29:16.942+05:30  INFO 20953 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 301 ms. Found 4 JPA repository interfaces.
+2024-02-01T15:29:18.393+05:30  INFO 20953 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-02-01T15:29:18.415+05:30  INFO 20953 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-02-01T15:29:18.416+05:30  INFO 20953 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-02-01T15:29:18.609+05:30  INFO 20953 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-02-01T15:29:18.610+05:30  INFO 20953 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4225 ms
+2024-02-01T15:29:18.686+05:30  WARN 20953 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-02-01T15:29:18.978+05:30  INFO 20953 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-01T15:29:19.250+05:30  INFO 20953 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-02-01T15:29:19.311+05:30  INFO 20953 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-02-01T15:29:19.915+05:30  INFO 20953 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-01T15:29:19.975+05:30  INFO 20953 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-02-01T15:29:21.054+05:30  INFO 20953 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@66863941
+2024-02-01T15:29:21.058+05:30  INFO 20953 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-02-01T15:29:21.359+05:30  WARN 20953 --- [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-02-01T15:29:22.914+05:30  INFO 20953 --- [main] o.h.m.i.EntityInstantiatorPojoStandard   : HHH000182: No default (no-argument) constructor for class: com.hyperface.ems.model.User (class must be instantiated by Interceptor)
+2024-02-01T15:29:23.271+05:30  INFO 20953 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-02-01T15:29:23.474+05:30  INFO 20953 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-01T15:29:26.246+05:30  INFO 20953 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@ea3491d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6012bee8, org.springframework.security.web.context.SecurityContextHolderFilter@67c61551, org.springframework.security.web.header.HeaderWriterFilter@276b68af, org.springframework.web.filter.CorsFilter@60b8c05c, org.springframework.security.web.authentication.logout.LogoutFilter@52238861, com.hyperface.ems.filters.JwtAuthFilter@45f70f68, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6bbff652, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3d72abea, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@62d72091, org.springframework.security.web.session.SessionManagementFilter@475b796d, org.springframework.security.web.access.ExceptionTranslationFilter@62109320, org.springframework.security.web.access.intercept.AuthorizationFilter@75937998]
+2024-02-01T15:29:27.998+05:30  INFO 20953 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-02-01T15:29:28.018+05:30  INFO 20953 --- [main] com.hyperface.ems.EmsApplication         : Started EmsApplication in 16.383 seconds (process running for 20.368)
+2024-02-01T15:31:20.875+05:30  INFO 20953 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-02-01T15:31:20.889+05:30  INFO 20953 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-02-01T15:31:20.892+05:30  INFO 20953 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-02-01T15:31:21.189+05:30  INFO 20953 --- [http-nio-8080-exec-1] c.hyperface.ems.filters.LoggingFilter    : Request received - Method: POST, URI: /auth/addUser
+2024-02-01T15:31:21.693+05:30  INFO 20953 --- [http-nio-8080-exec-1] c.hyperface.ems.filters.LoggingFilter    : Response status: 500
+2024-02-01T15:33:52.990+05:30  INFO 20953 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-02-01T15:33:53.140+05:30  INFO 20953 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-02-01T15:33:53.250+05:30  INFO 20953 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-02-01T15:34:21.504+05:30  INFO 21837 --- [main] com.hyperface.ems.EmsApplication         : Starting EmsApplication using Java 17.0.9 with PID 21837 (/home/shashank/Hyperface/ems/build/classes/groovy/main started by shashank in /home/shashank/Hyperface/ems)
+2024-02-01T15:34:21.509+05:30  INFO 21837 --- [main] com.hyperface.ems.EmsApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-02-01T15:34:25.476+05:30  INFO 21837 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-01T15:34:25.893+05:30  INFO 21837 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 401 ms. Found 4 JPA repository interfaces.
+2024-02-01T15:34:27.933+05:30  INFO 21837 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-02-01T15:34:28.020+05:30  INFO 21837 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-02-01T15:34:28.021+05:30  INFO 21837 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-02-01T15:34:29.484+05:30  INFO 21837 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-02-01T15:34:29.484+05:30  INFO 21837 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 6733 ms
+2024-02-01T15:34:29.584+05:30  WARN 21837 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-02-01T15:34:29.965+05:30  INFO 21837 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-01T15:34:30.262+05:30  INFO 21837 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-02-01T15:34:30.375+05:30  INFO 21837 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-02-01T15:34:31.167+05:30  INFO 21837 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-01T15:34:31.231+05:30  INFO 21837 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-02-01T15:34:32.080+05:30  INFO 21837 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@40ac0a56
+2024-02-01T15:34:32.084+05:30  INFO 21837 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-02-01T15:34:32.258+05:30  WARN 21837 --- [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-02-01T15:34:33.974+05:30  INFO 21837 --- [main] o.h.m.i.EntityInstantiatorPojoStandard   : HHH000182: No default (no-argument) constructor for class: com.hyperface.ems.model.User (class must be instantiated by Interceptor)
+2024-02-01T15:34:34.316+05:30  INFO 21837 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-02-01T15:34:34.549+05:30  INFO 21837 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-01T15:34:36.876+05:30  INFO 21837 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3fbf66e7, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6abbdcde, org.springframework.security.web.context.SecurityContextHolderFilter@5220e6ff, org.springframework.security.web.header.HeaderWriterFilter@2561d61, org.springframework.web.filter.CorsFilter@41ad6c00, org.springframework.security.web.authentication.logout.LogoutFilter@4feea86f, com.hyperface.ems.filters.JwtAuthFilter@61627c9d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@75128cf, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@33ccab9c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2a10407e, org.springframework.security.web.session.SessionManagementFilter@20425fab, org.springframework.security.web.access.ExceptionTranslationFilter@299f9a81, org.springframework.security.web.access.intercept.AuthorizationFilter@72b4ecb2]
+2024-02-01T15:34:38.533+05:30  INFO 21837 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-02-01T15:34:38.553+05:30  INFO 21837 --- [main] com.hyperface.ems.EmsApplication         : Started EmsApplication in 18.128 seconds (process running for 19.353)
+2024-02-01T15:34:49.025+05:30  INFO 21837 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-02-01T15:34:49.026+05:30  INFO 21837 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-02-01T15:34:49.029+05:30  INFO 21837 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2024-02-01T15:34:49.257+05:30  INFO 21837 --- [http-nio-8080-exec-1] c.hyperface.ems.filters.LoggingFilter    : Request received - Method: POST, URI: /auth/addUser
+2024-02-01T15:34:49.736+05:30  INFO 21837 --- [http-nio-8080-exec-1] c.hyperface.ems.filters.LoggingFilter    : Response status: 500
+2024-02-01T15:35:34.838+05:30  INFO 21837 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-02-01T15:35:34.912+05:30  INFO 21837 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-02-01T15:35:35.078+05:30  INFO 21837 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-02-01T15:36:22.135+05:30  INFO 22413 --- [main] com.hyperface.ems.EmsApplication         : Starting EmsApplication using Java 17.0.9 with PID 22413 (/home/shashank/Hyperface/ems/build/classes/groovy/main started by shashank in /home/shashank/Hyperface/ems)
+2024-02-01T15:36:22.151+05:30  INFO 22413 --- [main] com.hyperface.ems.EmsApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-02-01T15:36:25.649+05:30  INFO 22413 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-01T15:36:26.153+05:30  INFO 22413 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 477 ms. Found 4 JPA repository interfaces.
+2024-02-01T15:36:27.865+05:30  INFO 22413 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-02-01T15:36:27.895+05:30  INFO 22413 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-02-01T15:36:27.896+05:30  INFO 22413 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-02-01T15:36:28.063+05:30  INFO 22413 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-02-01T15:36:28.064+05:30  INFO 22413 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4609 ms
+2024-02-01T15:36:28.150+05:30  WARN 22413 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-02-01T15:36:28.959+05:30  INFO 22413 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-01T15:36:29.468+05:30  INFO 22413 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-02-01T15:36:29.535+05:30  INFO 22413 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-02-01T15:36:30.251+05:30  INFO 22413 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-01T15:36:30.321+05:30  INFO 22413 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-02-01T15:36:30.952+05:30  INFO 22413 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5eb2972f
+2024-02-01T15:36:30.956+05:30  INFO 22413 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-02-01T15:36:31.089+05:30  WARN 22413 --- [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-02-01T15:36:32.748+05:30  INFO 22413 --- [main] o.h.m.i.EntityInstantiatorPojoStandard   : HHH000182: No default (no-argument) constructor for class: com.hyperface.ems.model.User (class must be instantiated by Interceptor)
+2024-02-01T15:36:33.251+05:30  INFO 22413 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-02-01T15:36:33.400+05:30  INFO 22413 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-01T15:36:36.341+05:30  INFO 22413 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3ad5f99, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@72b4ecb2, org.springframework.security.web.context.SecurityContextHolderFilter@59da4992, org.springframework.security.web.header.HeaderWriterFilter@63e54c66, org.springframework.web.filter.CorsFilter@457dc809, org.springframework.security.web.authentication.logout.LogoutFilter@45ea6c24, com.hyperface.ems.filters.JwtAuthFilter@34c2e03d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@71c2cb26, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@593db293, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5687ba39, org.springframework.security.web.session.SessionManagementFilter@6d028c7e, org.springframework.security.web.access.ExceptionTranslationFilter@2c9af700, org.springframework.security.web.access.intercept.AuthorizationFilter@56f4f385]
+2024-02-01T15:36:38.549+05:30  INFO 22413 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-02-01T15:36:38.574+05:30  INFO 22413 --- [main] com.hyperface.ems.EmsApplication         : Started EmsApplication in 17.695 seconds (process running for 22.196)
+2024-02-01T15:37:06.286+05:30  INFO 22413 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-02-01T15:37:06.329+05:30  INFO 22413 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-02-01T15:37:06.332+05:30  INFO 22413 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-02-01T15:37:06.685+05:30  INFO 22413 --- [http-nio-8080-exec-2] c.hyperface.ems.filters.LoggingFilter    : Request received - Method: POST, URI: /auth/addUser
+2024-02-01T15:37:07.491+05:30  INFO 22413 --- [http-nio-8080-exec-2] c.hyperface.ems.filters.LoggingFilter    : Response status: 500
+2024-02-01T15:37:20.508+05:30  INFO 22413 --- [http-nio-8080-exec-4] c.hyperface.ems.filters.LoggingFilter    : Request received - Method: POST, URI: /auth/addUser
+2024-02-01T15:37:20.515+05:30  INFO 22413 --- [http-nio-8080-exec-4] c.hyperface.ems.filters.LoggingFilter    : Response status: 500
+2024-02-01T15:38:59.504+05:30  INFO 22413 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-02-01T15:38:59.575+05:30  INFO 22413 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-02-01T15:38:59.761+05:30  INFO 22413 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-02-01T15:39:33.948+05:30  INFO 22751 --- [main] com.hyperface.ems.EmsApplication         : Starting EmsApplication using Java 17.0.9 with PID 22751 (/home/shashank/Hyperface/ems/build/classes/groovy/main started by shashank in /home/shashank/Hyperface/ems)
+2024-02-01T15:39:33.973+05:30  INFO 22751 --- [main] com.hyperface.ems.EmsApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-02-01T15:39:38.202+05:30  INFO 22751 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-01T15:39:38.537+05:30  INFO 22751 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 319 ms. Found 4 JPA repository interfaces.
+2024-02-01T15:39:40.201+05:30  INFO 22751 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-02-01T15:39:40.223+05:30  INFO 22751 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-02-01T15:39:40.224+05:30  INFO 22751 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-02-01T15:39:40.489+05:30  INFO 22751 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-02-01T15:39:40.490+05:30  INFO 22751 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5158 ms
+2024-02-01T15:39:40.575+05:30  WARN 22751 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-02-01T15:39:40.903+05:30  INFO 22751 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-01T15:39:41.231+05:30  INFO 22751 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-02-01T15:39:41.328+05:30  INFO 22751 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-02-01T15:39:42.190+05:30  INFO 22751 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-01T15:39:42.237+05:30  INFO 22751 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-02-01T15:39:43.031+05:30  INFO 22751 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3a3316b6
+2024-02-01T15:39:43.037+05:30  INFO 22751 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-02-01T15:39:43.269+05:30  WARN 22751 --- [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-02-01T15:39:46.496+05:30  INFO 22751 --- [main] o.h.m.i.EntityInstantiatorPojoStandard   : HHH000182: No default (no-argument) constructor for class: com.hyperface.ems.model.User (class must be instantiated by Interceptor)
+2024-02-01T15:39:47.069+05:30  INFO 22751 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-02-01T15:39:47.406+05:30  INFO 22751 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-01T15:39:51.017+05:30  INFO 22751 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6abbdcde, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@41ad6c00, org.springframework.security.web.context.SecurityContextHolderFilter@602d5417, org.springframework.security.web.header.HeaderWriterFilter@6259d7a0, org.springframework.web.filter.CorsFilter@2a10407e, org.springframework.security.web.authentication.logout.LogoutFilter@6a9c848, com.hyperface.ems.filters.JwtAuthFilter@779cb140, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@33ccab9c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@668ea404, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6edc8385, org.springframework.security.web.session.SessionManagementFilter@71c2cb26, org.springframework.security.web.access.ExceptionTranslationFilter@4b19ee18, org.springframework.security.web.access.intercept.AuthorizationFilter@457dc809]
+2024-02-01T15:39:52.604+05:30  INFO 22751 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-02-01T15:39:52.715+05:30  INFO 22751 --- [main] com.hyperface.ems.EmsApplication         : Started EmsApplication in 20.442 seconds (process running for 23.001)
+2024-02-01T15:39:52.770+05:30  INFO 22751 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-02-01T15:39:52.775+05:30  INFO 22751 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-02-01T15:39:52.800+05:30  INFO 22751 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-02-01T15:50:18.764+05:30  INFO 3549 --- [main] com.hyperface.ems.EmsApplication         : Starting EmsApplication using Java 17.0.9 with PID 3549 (/home/shashank/Hyperface/ems/build/classes/groovy/main started by shashank in /home/shashank/Hyperface/ems)
+2024-02-01T15:50:18.809+05:30  INFO 3549 --- [main] com.hyperface.ems.EmsApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-02-01T15:50:21.669+05:30  INFO 3549 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-01T15:50:21.995+05:30  INFO 3549 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 309 ms. Found 4 JPA repository interfaces.
+2024-02-01T15:50:23.324+05:30  INFO 3549 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-02-01T15:50:23.364+05:30  INFO 3549 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-02-01T15:50:23.365+05:30  INFO 3549 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-02-01T15:50:23.496+05:30  INFO 3549 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-02-01T15:50:23.498+05:30  INFO 3549 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4002 ms
+2024-02-01T15:50:23.573+05:30  WARN 3549 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-02-01T15:50:23.923+05:30  INFO 3549 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-01T15:50:24.220+05:30  INFO 3549 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-02-01T15:50:24.308+05:30  INFO 3549 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-02-01T15:50:25.167+05:30  INFO 3549 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-01T15:50:25.228+05:30  INFO 3549 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-02-01T15:50:25.992+05:30  INFO 3549 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3ee258
+2024-02-01T15:50:25.995+05:30  INFO 3549 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-02-01T15:50:26.120+05:30  WARN 3549 --- [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-02-01T15:50:28.264+05:30  INFO 3549 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-02-01T15:50:28.427+05:30  INFO 3549 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-01T15:50:30.591+05:30  INFO 3549 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@51f31fad, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7976d382, org.springframework.security.web.context.SecurityContextHolderFilter@5246453e, org.springframework.security.web.header.HeaderWriterFilter@33a39d7e, org.springframework.web.filter.CorsFilter@59f36439, org.springframework.security.web.authentication.logout.LogoutFilter@7e092ca, com.hyperface.ems.filters.JwtAuthFilter@14091e24, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4b19ee18, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2561d61, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4feea86f, org.springframework.security.web.session.SessionManagementFilter@2c9af700, org.springframework.security.web.access.ExceptionTranslationFilter@3119fcad, org.springframework.security.web.access.intercept.AuthorizationFilter@3d72abea]
+2024-02-01T15:50:31.771+05:30  INFO 3549 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-02-01T15:50:31.791+05:30  INFO 3549 --- [main] com.hyperface.ems.EmsApplication         : Started EmsApplication in 14.135 seconds (process running for 15.478)
+2024-02-01T15:51:12.561+05:30  INFO 3549 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-02-01T15:51:12.573+05:30  INFO 3549 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-02-01T15:51:12.632+05:30  INFO 3549 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-02-01T16:00:07.385+05:30  INFO 4133 --- [main] com.hyperface.ems.EmsApplication         : Starting EmsApplication using Java 17.0.9 with PID 4133 (/home/shashank/Hyperface/ems/build/classes/groovy/main started by shashank in /home/shashank/Hyperface/ems)
+2024-02-01T16:00:07.390+05:30  INFO 4133 --- [main] com.hyperface.ems.EmsApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-02-01T16:00:10.524+05:30  INFO 4133 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-01T16:00:10.879+05:30  INFO 4133 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 338 ms. Found 4 JPA repository interfaces.
+2024-02-01T16:00:12.361+05:30  INFO 4133 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-02-01T16:00:12.391+05:30  INFO 4133 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-02-01T16:00:12.392+05:30  INFO 4133 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-02-01T16:00:12.528+05:30  INFO 4133 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-02-01T16:00:12.529+05:30  INFO 4133 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4192 ms
+2024-02-01T16:00:12.625+05:30  WARN 4133 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-02-01T16:00:12.936+05:30  INFO 4133 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-01T16:00:13.253+05:30  INFO 4133 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-02-01T16:00:13.357+05:30  INFO 4133 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-02-01T16:00:14.085+05:30  INFO 4133 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-01T16:00:14.158+05:30  INFO 4133 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-02-01T16:00:14.626+05:30  INFO 4133 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3a3316b6
+2024-02-01T16:00:14.630+05:30  INFO 4133 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-02-01T16:00:14.764+05:30  WARN 4133 --- [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-02-01T16:00:16.606+05:30  INFO 4133 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-02-01T16:00:16.805+05:30  INFO 4133 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-01T16:00:19.235+05:30  INFO 4133 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@457dc809, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5687ba39, org.springframework.security.web.context.SecurityContextHolderFilter@71c2cb26, org.springframework.security.web.header.HeaderWriterFilter@299f9a81, org.springframework.web.filter.CorsFilter@3fbf66e7, org.springframework.security.web.authentication.logout.LogoutFilter@7976d382, com.hyperface.ems.filters.JwtAuthFilter@779cb140, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5220e6ff, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@602d5417, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6abbdcde, org.springframework.security.web.session.SessionManagementFilter@1a16583d, org.springframework.security.web.access.ExceptionTranslationFilter@63e54c66, org.springframework.security.web.access.intercept.AuthorizationFilter@18f1631c]
+2024-02-01T16:00:20.513+05:30  INFO 4133 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-02-01T16:00:20.536+05:30  INFO 4133 --- [main] com.hyperface.ems.EmsApplication         : Started EmsApplication in 14.517 seconds (process running for 17.576)
+2024-02-01T16:00:30.500+05:30  INFO 4133 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-02-01T16:00:30.501+05:30  INFO 4133 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-02-01T16:00:30.504+05:30  INFO 4133 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-02-01T16:00:30.566+05:30  INFO 4133 --- [http-nio-8080-exec-2] c.hyperface.ems.filters.LoggingFilter    : Request received - Method: POST, URI: /auth/addUser
+2024-02-01T16:00:31.307+05:30  INFO 4133 --- [http-nio-8080-exec-2] c.hyperface.ems.filters.LoggingFilter    : Response status: 200
+2024-02-01T16:01:21.790+05:30  INFO 4133 --- [http-nio-8080-exec-3] c.hyperface.ems.filters.LoggingFilter    : Request received - Method: POST, URI: /auth/generateToken
+2024-02-01T16:01:22.253+05:30  INFO 4133 --- [http-nio-8080-exec-3] c.hyperface.ems.filters.LoggingFilter    : Response status: 401
+2024-02-01T16:02:26.970+05:30  INFO 4133 --- [http-nio-8080-exec-5] c.hyperface.ems.filters.LoggingFilter    : Request received - Method: POST, URI: /auth/generateToken
+2024-02-01T16:02:27.551+05:30  INFO 4133 --- [http-nio-8080-exec-5] c.hyperface.ems.filters.LoggingFilter    : Response status: 200

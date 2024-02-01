@@ -9,9 +9,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,6 +16,8 @@ public class User {
     private String username;
     private String password;
     private String roles;
+
+    public User(){}
 
     public User(String username, String password, String roles) {
         this.username = username;

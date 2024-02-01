@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 
 @Service
-class UserInfoService implements UserDetailsService {
+public class UserInfoService implements UserDetailsService {
     @Autowired
     private UserRepo userRepo;
 
@@ -20,13 +20,13 @@ class UserInfoService implements UserDetailsService {
     private PasswordEncoder passwordEncoder;
 
     @Override
-    UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Optional<User> user = userRepo.findByUsername(username);
 
         return user.map(UserInfoDetails::new).orElseThrow(()->new UsernameNotFoundException("User Not Found!!"));
     }
 
-    String addUser(User user){
+    public String addUser(User user){
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         userRepo.save(user);
         return "User added successfully!";
