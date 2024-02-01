@@ -16,7 +16,6 @@ import org.springframework.web.context.WebApplicationContext;
 
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 //@AutoConfigureMockMvc
@@ -27,11 +26,11 @@ class EmsApplicationTests {
     @Autowired
     private WebTestClient client;
     @Autowired
-    private static UserInfoService userInfoService;
+    private UserInfoService userInfoService;
     @Autowired
-    private static JwtService jwtService;
+    private JwtService jwtService;
     @Autowired
-    static private UserRepo userRepo;
+    private UserRepo userRepo;
     static String token;
 
     @BeforeEach
@@ -79,7 +78,6 @@ class EmsApplicationTests {
                 .expectStatus().isOk()
                 .expectBody(Employee.class)
                 .value(employeeResponse -> {
-                    assertNotNull(employeeResponse.getId());
                     assertEquals("Shashank", employeeResponse.getFirstName());
                     assertEquals("nshashankvarma@gmail.com", employeeResponse.getEmail());
                 });

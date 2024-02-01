@@ -181,3 +181,55 @@
 2024-02-01T16:01:22.253+05:30  INFO 4133 --- [http-nio-8080-exec-3] c.hyperface.ems.filters.LoggingFilter    : Response status: 401
 2024-02-01T16:02:26.970+05:30  INFO 4133 --- [http-nio-8080-exec-5] c.hyperface.ems.filters.LoggingFilter    : Request received - Method: POST, URI: /auth/generateToken
 2024-02-01T16:02:27.551+05:30  INFO 4133 --- [http-nio-8080-exec-5] c.hyperface.ems.filters.LoggingFilter    : Response status: 200
+2024-02-01T16:18:46.107+05:30  INFO 4133 --- [http-nio-8080-exec-9] c.hyperface.ems.filters.LoggingFilter    : Request received - Method: GET, URI: /api/dept/getEmployees/1
+2024-02-01T16:18:46.735+05:30  INFO 4133 --- [http-nio-8080-exec-9] c.hyperface.ems.filters.LoggingFilter    : Response status: 404
+2024-02-01T16:19:01.706+05:30  INFO 4133 --- [http-nio-8080-exec-10] c.hyperface.ems.filters.LoggingFilter    : Request received - Method: GET, URI: /api/employee/1
+2024-02-01T16:19:01.713+05:30  INFO 4133 --- [http-nio-8080-exec-10] c.hyperface.ems.filters.LoggingFilter    : Response status: 500
+2024-02-01T16:19:44.537+05:30  INFO 4133 --- [http-nio-8080-exec-2] c.hyperface.ems.filters.LoggingFilter    : Request received - Method: GET, URI: /api/employee/getAll
+2024-02-01T16:19:44.783+05:30  INFO 4133 --- [http-nio-8080-exec-2] c.hyperface.ems.filters.LoggingFilter    : Response status: 200
+2024-02-01T16:19:48.512+05:30  INFO 4133 --- [http-nio-8080-exec-3] c.hyperface.ems.filters.LoggingFilter    : Request received - Method: GET, URI: /api/employee/1
+2024-02-01T16:19:48.518+05:30  INFO 4133 --- [http-nio-8080-exec-3] c.hyperface.ems.filters.LoggingFilter    : Response status: 500
+2024-02-01T16:20:19.233+05:30  INFO 4133 --- [http-nio-8080-exec-6] c.hyperface.ems.filters.LoggingFilter    : Request received - Method: GET, URI: /api/dept/1
+2024-02-01T16:20:19.245+05:30  INFO 4133 --- [http-nio-8080-exec-6] c.hyperface.ems.filters.LoggingFilter    : Response status: 500
+2024-02-01T16:20:38.798+05:30  INFO 4133 --- [http-nio-8080-exec-7] c.hyperface.ems.filters.LoggingFilter    : Request received - Method: GET, URI: /api/dept/getProjects/1
+2024-02-01T16:20:38.810+05:30  INFO 4133 --- [http-nio-8080-exec-7] c.hyperface.ems.filters.LoggingFilter    : Response status: 404
+2024-02-01T16:21:01.964+05:30  INFO 4133 --- [http-nio-8080-exec-8] c.hyperface.ems.filters.LoggingFilter    : Request received - Method: GET, URI: /api/dept/getProjects/2
+2024-02-01T16:21:02.171+05:30  INFO 4133 --- [http-nio-8080-exec-8] c.hyperface.ems.filters.LoggingFilter    : Response status: 200
+2024-02-01T16:21:11.793+05:30  INFO 4133 --- [http-nio-8080-exec-9] c.hyperface.ems.filters.LoggingFilter    : Request received - Method: GET, URI: /api/employee/2
+2024-02-01T16:21:11.799+05:30  INFO 4133 --- [http-nio-8080-exec-9] c.hyperface.ems.filters.LoggingFilter    : Response status: 500
+2024-02-01T16:23:32.797+05:30  INFO 4133 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-02-01T16:23:32.830+05:30  INFO 4133 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-02-01T16:23:32.999+05:30  INFO 4133 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-02-01T16:55:25.189+05:30  INFO 13935 --- [main] com.hyperface.ems.EmsApplication         : Starting EmsApplication using Java 17.0.9 with PID 13935 (/home/shashank/Hyperface/ems/build/classes/groovy/main started by shashank in /home/shashank/Hyperface/ems)
+2024-02-01T16:55:25.231+05:30  INFO 13935 --- [main] com.hyperface.ems.EmsApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-02-01T16:55:27.629+05:30  INFO 13935 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-01T16:55:27.881+05:30  INFO 13935 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 237 ms. Found 4 JPA repository interfaces.
+2024-02-01T16:55:29.081+05:30  INFO 13935 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-02-01T16:55:29.119+05:30  INFO 13935 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-02-01T16:55:29.120+05:30  INFO 13935 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-02-01T16:55:29.279+05:30  INFO 13935 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-02-01T16:55:29.281+05:30  INFO 13935 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3277 ms
+2024-02-01T16:55:29.384+05:30  WARN 13935 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-02-01T16:55:29.632+05:30  INFO 13935 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-01T16:55:29.786+05:30  INFO 13935 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-02-01T16:55:29.855+05:30  INFO 13935 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-02-01T16:55:30.311+05:30  INFO 13935 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-01T16:55:30.360+05:30  INFO 13935 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-02-01T16:55:31.347+05:30  INFO 13935 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@29699283
+2024-02-01T16:55:31.351+05:30  INFO 13935 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-02-01T16:55:31.494+05:30  WARN 13935 --- [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-02-01T16:55:33.301+05:30  INFO 13935 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-02-01T16:55:33.524+05:30  INFO 13935 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-01T16:55:35.217+05:30  INFO 13935 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6a9c848, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@498cf1dc, org.springframework.security.web.context.SecurityContextHolderFilter@6259d7a0, org.springframework.security.web.header.HeaderWriterFilter@4b9a1be5, org.springframework.web.filter.CorsFilter@b9c8678, org.springframework.security.web.authentication.logout.LogoutFilter@6421e9e7, com.hyperface.ems.filters.JwtAuthFilter@34c2e03d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@33aa4326, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@125ed27, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@318beab4, org.springframework.security.web.session.SessionManagementFilter@299f9a81, org.springframework.security.web.access.ExceptionTranslationFilter@94f79a7, org.springframework.security.web.access.intercept.AuthorizationFilter@7976d382]
+2024-02-01T16:55:36.352+05:30  INFO 13935 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-02-01T16:55:36.371+05:30  INFO 13935 --- [main] com.hyperface.ems.EmsApplication         : Started EmsApplication in 12.067 seconds (process running for 12.745)
+2024-02-01T16:55:42.533+05:30  INFO 13935 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-02-01T16:55:42.534+05:30  INFO 13935 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-02-01T16:55:42.537+05:30  INFO 13935 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-02-01T16:55:42.583+05:30  INFO 13935 --- [http-nio-8080-exec-1] c.hyperface.ems.filters.LoggingFilter    : Request received - Method: POST, URI: /auth/generateToken
+2024-02-01T16:55:43.793+05:30  INFO 13935 --- [http-nio-8080-exec-1] c.hyperface.ems.filters.LoggingFilter    : Response status: 200
+2024-02-01T16:56:09.961+05:30  INFO 13935 --- [http-nio-8080-exec-3] c.hyperface.ems.filters.LoggingFilter    : Request received - Method: POST, URI: /api/dept/create
+2024-02-01T16:56:10.103+05:30  INFO 13935 --- [http-nio-8080-exec-3] c.hyperface.ems.filters.LoggingFilter    : Response status: 401
+2024-02-01T17:01:09.529+05:30  INFO 13935 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-02-01T17:01:09.536+05:30  INFO 13935 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-02-01T17:01:09.554+05:30  INFO 13935 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
